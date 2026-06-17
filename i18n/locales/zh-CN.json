@@ -1,0 +1,456 @@
+{
+  "site": {
+    "name": "免费在线工具",
+    "shortName": "在线工具",
+    "description": "面向开发者、数据分析师和网站运营者的免费浏览器工具。"
+  },
+  "nav": {
+    "primary": "主导航",
+    "footer": "页脚导航",
+    "tools": "工具",
+    "about": "关于",
+    "contact": "联系",
+    "privacy": "隐私政策",
+    "terms": "使用条款"
+  },
+  "language": {
+    "label": "语言",
+    "english": "English",
+    "chinese": "简体中文"
+  },
+  "common": {
+    "browseTools": "浏览工具",
+    "privacyPolicy": "隐私政策",
+    "viewAllTools": "查看全部工具",
+    "loadExample": "加载示例",
+    "clear": "清空",
+    "copyOutput": "复制输出",
+    "copyResult": "复制结果",
+    "copySql": "复制 SQL",
+    "copied": "已复制",
+    "output": "输出",
+    "result": "结果",
+    "example": "示例",
+    "howToUse": "使用方法",
+    "faq": "常见问题",
+    "privacyNote": "隐私说明",
+    "relatedTools": "相关工具"
+  },
+  "categories": {
+    "developer": "开发工具",
+    "encoding": "编码工具",
+    "dateTime": "日期和时间工具",
+    "diagnostics": "网页诊断工具",
+    "logAnalysis": "日志分析工具"
+  },
+  "tools": {
+    "items": {
+      "jsonFormatter": {
+        "title": "JSON 格式化工具",
+        "description": "在浏览器中格式化、校验和压缩 JSON 数据。"
+      },
+      "timestampConverter": {
+        "title": "时间戳转换工具",
+        "description": "将 Unix 时间戳转换为可读日期，也可以把日期转换回时间戳。"
+      },
+      "urlEncoder": {
+        "title": "URL 编码 / 解码工具",
+        "description": "为查询参数、跳转链接和调试场景编码或解码 URL 组件。"
+      },
+      "base64": {
+        "title": "Base64 编码 / 解码工具",
+        "description": "将 UTF-8 文本编码为 Base64，或把 Base64 字符串解码为文本。"
+      },
+      "userAgentParser": {
+        "title": "User-Agent 解析工具",
+        "description": "从 User-Agent 字符串中解析浏览器、操作系统、设备类型和渲染引擎。"
+      },
+      "slsSqlGenerator": {
+        "title": "阿里云 SLS SQL 生成器",
+        "description": "生成常见阿里云日志服务 SQL 模板，用于 PV、时间分桶、过滤和 trackId 分析。"
+      }
+    }
+  },
+  "footer": {
+    "description": "面向开发者、数据分析师、网站运营者和日志分析场景的浏览器工具集合。"
+  },
+  "pages": {
+    "home": {
+      "seoTitle": "面向开发者和网站运营者的免费在线工具",
+      "seoDescription": "一组浏览器工具，可用于格式化数据、转换时间戳、编码文本、解析 User-Agent 字符串并生成日志分析 SQL。",
+      "eyebrow": "开发者工具",
+      "h1": "面向开发者和网站运营者的免费在线工具",
+      "intro": "这里提供一组面向开发者、数据分析师和网站运营者的浏览器工具，帮助你格式化数据、转换时间戳、编码文本、解析 User-Agent 字符串，并生成日志分析 SQL。",
+      "privacy": "多数工具默认在你的浏览器本地运行。除非页面明确说明，你输入的内容不会被上传，因此适合在不注册账号、不发送私密片段到远程服务的情况下进行快速调试。",
+      "categoriesTitle": "工具分类",
+      "recommendedTitle": "推荐工具",
+      "recommendedIntro": "从数据清理、调试、编码和日志分析中最常用的工具开始。",
+      "staticTitle": "适合静态页面和可读内容",
+      "staticIntro": "每个工具页都包含清晰说明、使用步骤、示例、常见问题、隐私说明和相关工具链接。核心页面内容会在静态生成时渲染为 HTML，因此即使禁用 JavaScript，访客和搜索引擎也能阅读页面主体内容。"
+    },
+    "toolsIndex": {
+      "seoTitle": "全部在线工具",
+      "seoDescription": "浏览免费的在线工具，包括 JSON 格式化、时间戳转换、URL 编码、Base64 转换、User-Agent 解析和阿里云 SLS SQL 生成。",
+      "h1": "全部在线工具",
+      "intro": "浏览这些免费的浏览器工具，用于格式化数据、转换日期、编码文本、检查 User-Agent 字符串，以及准备阿里云 SLS SQL 模板。每个工具都无需登录，并带有静态说明文档，便于快速参考。"
+    },
+    "about": {
+      "seoTitle": "关于",
+      "seoDescription": "了解免费在线工具提供的功能、适用人群，以及默认本地处理如何保护工具输入。",
+      "h1": "关于免费在线工具",
+      "intro": "免费在线工具是一个实用工具集合，面向开发者、数据分析师、网站运营者和技术支持团队。当前版本聚焦常见日常任务：格式化 JSON、转换 Unix 时间戳、编码 URL 文本、解码 Base64、解析 User-Agent 字符串，以及生成阿里云 SLS SQL 模板。",
+      "sections": [
+        {
+          "title": "这个网站提供什么",
+          "body": "网站围绕聚焦的小工具和可读说明来设计。每个工具页都包含使用步骤、示例、常见问题、隐私说明和相关工具链接。目标是在你需要快速转换时可直接使用，在你需要理解转换含义时也能看得清楚。"
+        },
+        {
+          "title": "这些工具免费吗？",
+          "body": "是的。当前版本的工具可以免费访问，也不需要注册。网站之后可能使用第三方广告或统计服务来支持维护，但工具会继续保持无需登录即可使用。"
+        },
+        {
+          "title": "我的数据会被上传吗？",
+          "body": "工具输入默认在你的浏览器本地处理。静态页面和客户端工具组件的设计目标，是让常见的格式化、编码、解码和解析任务不需要把输入发送到服务器。"
+        },
+        {
+          "title": "适合谁使用？",
+          "body": "这些工具适合前端工程师、后端工程师、数据分析师、QA 测试、网站运营者，以及任何在调试网站、日志、API、跳转链接、埋点事件或文本载荷时需要快速浏览器工具的人。"
+        }
+      ],
+      "contactTitle": "联系",
+      "contactBody": "如需反馈、报告问题或提出功能建议，请联系"
+    },
+    "contact": {
+      "seoTitle": "联系",
+      "seoDescription": "联系免费在线工具，反馈问题、报告 bug 或提出功能建议。",
+      "h1": "联系",
+      "intro": "你可以通过邮件联系网站维护者，反馈意见、报告问题、建议工具，或咨询隐私相关问题。",
+      "emailLabel": "邮箱",
+      "sections": [
+        {
+          "title": "问题报告",
+          "body": "报告问题时，请包含工具名称、使用的浏览器、触发问题的输入类型，以及你期望得到的结果。请不要发送私人凭据、生产环境密钥或敏感客户数据。"
+        },
+        {
+          "title": "功能建议",
+          "body": "如果建议符合本站定位，也就是快速、浏览器端、带清晰说明的实用工具，欢迎提交。有效信息包括你要解决的问题、示例输入和输出，以及这个工具是否需要完全在浏览器离线运行。"
+        },
+        {
+          "title": "隐私问题",
+          "body": "如果你对本地处理、Cookie、广告服务或统计分析有疑问，请附上页面 URL 和简短说明，便于明确审查。"
+        }
+      ]
+    },
+    "privacy": {
+      "seoTitle": "隐私政策",
+      "seoDescription": "阅读免费在线工具的隐私政策，了解本地处理、Cookie、Google Analytics、未来可能使用的 Google AdSense、外部链接和联系方式。",
+      "h1": "隐私政策",
+      "intro": "本隐私政策说明免费在线工具如何处理工具输入、Cookie、第三方服务、Google Analytics、未来可能使用的 Google AdSense 等广告服务、外部链接和联系请求。",
+      "sections": [
+        {
+          "title": "工具输入数据",
+          "body": "当前版本的工具默认在你的浏览器本地处理输入。JSON 格式化、时间戳转换、URL 编码、Base64 转换、User-Agent 解析和 SQL 模板生成，都不需要把输入上传到我们的服务器。"
+        },
+        {
+          "title": "Cookie",
+          "body": "网站可能使用 Cookie 或类似的浏览器存储，用于基础偏好设置、统计分析或未来的广告服务。你可以通过浏览器设置管理或阻止 Cookie。"
+        },
+        {
+          "title": "Google Analytics",
+          "body": "网站可能使用 Google Analytics 了解页面表现、热门工具和错误情况。统计分析用于汇总层面的网站运营洞察，不应要求用户提交私密的工具输入。"
+        },
+        {
+          "title": "未来可能使用的 Google AdSense 和广告",
+          "body": "网站未来可能使用 Google AdSense 或其他第三方广告服务。这些服务可能根据自身政策使用 Cookie 或类似技术来展示、衡量和改进广告。"
+        },
+        {
+          "title": "外部链接",
+          "body": "部分页面可能链接到外部文档或服务。外部网站有自己的隐私政策，本站不对它们的内容或做法负责。"
+        }
+      ],
+      "contactTitle": "联系我们",
+      "contactBody": "如有隐私问题，请联系"
+    },
+    "terms": {
+      "seoTitle": "使用条款",
+      "seoDescription": "阅读免费在线工具的使用条款，包括可接受使用、免责声明和用户责任。",
+      "h1": "使用条款",
+      "intro": "使用免费在线工具即表示你同意负责任地使用本站，并理解这些工具仅为便利、调试、学习和参考目的提供。",
+      "sections": [
+        {
+          "title": "工具结果仅供参考",
+          "body": "这些工具用于辅助常见技术任务，但生成结果不保证适用于每一种环境。在生产系统、安全敏感流程或业务决策中使用前，请先自行核对结果。"
+        },
+        {
+          "title": "用户责任",
+          "body": "你需要对粘贴到工具中的输入以及如何使用输出结果负责。除非你已经确认适合当前场景，否则不要粘贴密码、访问令牌、私钥、客户记录或其他敏感信息。"
+        },
+        {
+          "title": "可接受使用",
+          "body": "请不要滥用本站、试图影响服务可用性、过度抓取页面、绕过正常访问控制，或将工具用于违法活动。"
+        },
+        {
+          "title": "免责声明",
+          "body": "本站按现状提供，不对准确性、可用性或特定用途适用性作出保证。使用工具产生的风险由你自行承担。"
+        }
+      ]
+    },
+    "toolPages": {
+      "jsonFormatter": {
+        "seoTitle": "JSON 格式化和校验工具",
+        "seoDescription": "在线格式化、校验和压缩 JSON 数据，所有处理默认在浏览器本地完成。",
+        "h1": "JSON 格式化工具",
+        "intro": "直接在浏览器中格式化、校验和压缩 JSON 数据。它适合检查 API 响应、整理配置文件、核对复制来的载荷，或把 JSON 压缩成单行字符串。",
+        "toolHeading": "JSON 格式化工具",
+        "howToUse": [
+          "将 JSON 对象、数组、字符串、数字、布尔值或 null 粘贴到输入框。选择格式化可以把有效 JSON 转成缩进结构，选择压缩可以移除多余空白，选择校验可以检查输入是否能被解析为 JSON。",
+          "如果输入存在语法问题，工具会显示解析错误，而不会覆盖输出。常见问题包括缺少逗号、尾随逗号、字符串使用单引号、未转义换行，以及从 JavaScript 文件中复制来的注释。"
+        ],
+        "example": "包含 name 和 enabled 等字段的紧凑 JSON 值，可以被格式化成更易读的多行结构。同一份输入也可以再次压缩，用在请求体、环境变量或日志字段中。",
+        "privacy": "你的输入会在浏览器本地处理，不会上传到我们的服务器。",
+        "faq": [
+          {
+            "q": "什么是 JSON 格式化？",
+            "a": "JSON 格式化会为有效 JSON 添加缩进和换行，让嵌套对象和数组更容易阅读。"
+          },
+          {
+            "q": "格式化和压缩有什么区别？",
+            "a": "格式化提升可读性，压缩则移除不必要的空白，让 JSON 更短。"
+          },
+          {
+            "q": "为什么有效的 JavaScript 对象不能作为 JSON 通过？",
+            "a": "JSON 比 JavaScript 对象语法更严格。JSON 要求属性名使用双引号，也不允许注释或尾随逗号。"
+          },
+          {
+            "q": "我的 JSON 会被上传吗？",
+            "a": "不会。格式化、校验和压缩逻辑都在你的浏览器本地运行。"
+          }
+        ]
+      },
+      "timestampConverter": {
+        "seoTitle": "时间戳转换工具",
+        "seoDescription": "将 Unix 时间戳转换为本地时间和 UTC 时间，也可以把日期转换为秒级和毫秒级时间戳。",
+        "h1": "时间戳转换工具",
+        "intro": "将 Unix 时间戳转换为可读的本地时间和 UTC 时间，或把日期时间转换回秒级和毫秒级时间戳。工具会识别 10 位秒级时间戳和 13 位毫秒级时间戳。",
+        "toolHeading": "时间戳转换工具",
+        "howToUse": [
+          "要把时间戳转成日期，请粘贴 10 位 Unix 秒级时间戳或 13 位毫秒级时间戳，然后执行转换。结果会显示识别出的单位、本地时间、UTC 时间、秒和毫秒。",
+          "要把日期转成时间戳，请在日期输入框选择日期和时间。结果会同时显示秒和毫秒，便于在 API、日志、数据库字段或分析系统中使用。"
+        ],
+        "example": "时间戳 1704067200 是一个秒级 Unix 时间戳。同一时刻的毫秒值是 1704067200000。许多 API 使用秒，而 JavaScript 日期和浏览器计时通常使用毫秒。",
+        "privacy": "你的输入会在浏览器本地处理，不会上传到我们的服务器。",
+        "faq": [
+          {
+            "q": "什么是 Unix 时间戳？",
+            "a": "Unix 时间戳从 1970-01-01 00:00:00 UTC 开始计时，常见存储形式是秒或毫秒。"
+          },
+          {
+            "q": "如何判断时间戳是秒还是毫秒？",
+            "a": "10 位数字通常是秒级时间戳，13 位数字通常是毫秒级时间戳。"
+          },
+          {
+            "q": "为什么本地时间和 UTC 不一样？",
+            "a": "UTC 是全球参考时间。本地时间会应用设备所在时区的偏移，因此显示的小时或日期可能不同。"
+          }
+        ]
+      },
+      "urlEncoder": {
+        "seoTitle": "URL 编码和解码工具",
+        "seoDescription": "为查询参数、跳转 URL、跟踪参数和网页调试编码或解码 URL 组件。",
+        "h1": "URL 编码 / 解码工具",
+        "intro": "为查询参数、跳转 URL、分析参数和调试场景编码或解码 URL 组件。工具使用浏览器的 URL 组件编码能力，让空格、符号和非 ASCII 文本可以安全放入 URL 参数。",
+        "toolHeading": "URL 编码和解码工具",
+        "howToUse": [
+          "将普通文本或 URL 组件粘贴到输入框，选择编码即可转义在 URL 中有特殊含义的字符。粘贴已经编码的值并选择解码，可以把百分号编码序列还原为可读文本。",
+          "解码错误通常发生在输入包含不完整的百分号转义时，例如 %E0%A4，或单独出现的百分号。遇到这种情况，请先检查原始值，再用于跳转或请求。"
+        ],
+        "example": "文本 hello world 作为 URL 组件编码后会变成 hello%20world。完整的跳转 URL 也可以先编码，再放入另一个查询参数中。",
+        "privacy": "你的输入会在浏览器本地处理，不会上传到我们的服务器。",
+        "faq": [
+          {
+            "q": "什么是 URL 编码？",
+            "a": "URL 编码会把字符转换为安全的百分号编码形式，使它们可以放在 URL 中。"
+          },
+          {
+            "q": "什么时候应该编码 URL 值？",
+            "a": "当值要放入查询参数、跳转参数或跟踪链接中，且其中的空格和符号可能影响解析时，应先编码。"
+          },
+          {
+            "q": "encodeURI 和 encodeURIComponent 有什么区别？",
+            "a": "encodeURI 会保留 ? 和 & 等 URL 分隔符；encodeURIComponent 会更彻底地编码单个组件。"
+          }
+        ]
+      },
+      "base64": {
+        "seoTitle": "Base64 编码和解码工具",
+        "seoDescription": "在浏览器中将 UTF-8 文本编码为 Base64，或把 Base64 字符串解码为可读文本。",
+        "h1": "Base64 编码 / 解码工具",
+        "intro": "将 UTF-8 文本编码为 Base64，或把 Base64 字符串解码回文本。它适合检查 API 载荷、小型配置值、邮件内容，以及以 Base64 形式表示的文本片段。",
+        "toolHeading": "Base64 编码和解码工具",
+        "howToUse": [
+          "粘贴可读文本并选择编码，即可转换成 Base64。粘贴 Base64 字符串并选择解码，即可恢复原始 UTF-8 文本。无效的 Base64 输入会显示错误，不会导致页面崩溃。",
+          "工具支持 UTF-8 文本，因此中文等非英文字符也可以用于日常调试。对于二进制文件，请使用专门的文件编码工具，不建议把大段二进制内容粘贴到文本框。"
+        ],
+        "example": "文本 Hello 的 Base64 结果是 SGVsbG8=。Base64 不是加密，只是用适合文本系统传输的字符集来表示数据。",
+        "privacy": "你的输入会在浏览器本地处理，不会上传到我们的服务器。",
+        "faq": [
+          {
+            "q": "什么是 Base64？",
+            "a": "Base64 是一种编码方式，用字母、数字、加号、斜杠和等号等字符来表示数据。"
+          },
+          {
+            "q": "Base64 是加密吗？",
+            "a": "不是。Base64 不会隐藏或保护数据，任何人都可以把它解码回原始内容。"
+          },
+          {
+            "q": "常见用途有哪些？",
+            "a": "常见用途包括小型 API 载荷、邮件格式、data URL、非敏感 token，以及需要文本安全传输的内容。"
+          }
+        ]
+      },
+      "userAgentParser": {
+        "seoTitle": "User-Agent 解析工具",
+        "seoDescription": "从 User-Agent 字符串中解析浏览器、操作系统、设备类型和渲染引擎。",
+        "h1": "User-Agent 解析工具",
+        "intro": "解析 User-Agent 字符串，识别可能的浏览器、操作系统、设备类型和渲染引擎。当前版本使用轻量级浏览器端规则，适合快速诊断。",
+        "toolHeading": "User-Agent 解析工具",
+        "howToUse": [
+          "将浏览器 User-Agent 字符串粘贴到输入框并选择解析。结果会显示一个 JSON 对象，其中包含浏览器、操作系统、设备类型和渲染引擎字段。",
+          "User-Agent 字符串并不是绝对可靠的信息来源。浏览器可能会减少、冻结或伪装其中的部分内容，一些内嵌 WebView 也会使用自定义格式。请把解析结果作为调试线索，而不是安全决策依据。"
+        ],
+        "example": "Chrome 桌面端 User-Agent 通常包含 Windows NT、AppleWebKit、Chrome 和 Safari。解析器会利用这些标记推断 Windows、Chrome、Desktop 和 Blink。",
+        "privacy": "你的输入会在浏览器本地处理，不会上传到我们的服务器。",
+        "faq": [
+          {
+            "q": "什么是 User-Agent 字符串？",
+            "a": "它是许多浏览器和客户端在发起请求时发送的文本值，用于描述请求方软件。"
+          },
+          {
+            "q": "它能透露哪些信息？",
+            "a": "它可能透露浏览器系列、操作系统、设备类别、渲染引擎和兼容性标记。"
+          },
+          {
+            "q": "应该依赖 User-Agent 做功能检测吗？",
+            "a": "能使用功能检测时应优先使用功能检测。User-Agent 解析更适合诊断、分析分组和日志排查。"
+          }
+        ]
+      },
+      "slsSqlGenerator": {
+        "seoTitle": "阿里云 SLS SQL 生成器",
+        "seoDescription": "生成阿里云 SLS SQL 模板，用于 PV 统计、时间分桶、字段分组、过滤、trackId 聚合，以及包含事件 A 但不包含事件 B 的记录分析。",
+        "h1": "阿里云 SLS SQL 生成器",
+        "intro": "生成常见阿里云日志服务 SQL 模板，用于页面访问量统计、时间分桶聚合、字段分组、URL 过滤、事件过滤、trackId 聚合，以及包含某个事件但不包含另一个事件的记录分析。",
+        "toolHeading": "SLS SQL 生成器",
+        "howToUse": [
+          "选择一个模板，输入可选过滤条件，例如 su、type、trackType 或 step，然后检查生成的 SQL。生成器支持按分钟统计 PV、自定义时间分桶、按字段分组、简单过滤日志查询、trackId 聚合，以及包含事件 A 但不包含事件 B 的模板。",
+          "生成的 SQL 适合作为起点。不同阿里云 SLS 项目可能使用不同字段名和字段类型，因此在生产查询前，请确认每个字段是字符串还是数字。"
+        ],
+        "example": "如果要按 10 秒分桶统计某个 checkout URL 的访问量，可以选择时间分桶模板，选择 10 秒，并在 su 过滤中输入 /checkout。生成的 SQL 会按格式化后的时间桶分组，并按时间排序。",
+        "privacy": "你的输入会在浏览器本地处理，不会上传到我们的服务器。",
+        "faq": [
+          {
+            "q": "什么是阿里云 SLS SQL？",
+            "a": "阿里云 SLS SQL 是阿里云日志服务中用于过滤、聚合和分析日志数据的查询语言。"
+          },
+          {
+            "q": "如何按时间桶聚合日志？",
+            "a": "可以使用 __time__ 时间字段，按桶大小减去余数后格式化，并按这个时间桶别名分组。"
+          },
+          {
+            "q": "如何按 URL 或事件类型过滤？",
+            "a": "URL 片段可以使用 su LIKE '%value%'，数字事件字段可以使用 type = 6 或 trackType = 1 这样的等值过滤。"
+          },
+          {
+            "q": "生成的 SQL 可以直接运行吗？",
+            "a": "通常需要先检查。不同 SLS 项目的字段名、值类型和日志表行为可能不同。"
+          }
+        ]
+      }
+    }
+  },
+  "toolUi": {
+    "json": {
+      "input": "JSON 输入",
+      "placeholder": "在这里粘贴 JSON。",
+      "format": "格式化",
+      "minify": "压缩",
+      "validate": "校验",
+      "actions": "JSON 操作",
+      "outputPlaceholder": "格式化或压缩后的 JSON 会显示在这里。",
+      "emptyError": "请先粘贴 JSON 输入再执行操作。",
+      "invalidError": "无效的 JSON 输入。",
+      "formatted": "JSON 格式化成功。",
+      "minified": "JSON 压缩成功。",
+      "valid": "JSON 有效。",
+      "exampleLoaded": "已加载 JSON 示例。"
+    },
+    "timestamp": {
+      "timestampLabel": "Unix 时间戳",
+      "dateLabel": "日期和时间",
+      "toDate": "时间戳转日期",
+      "toTimestamp": "日期转时间戳",
+      "unit": "输入单位",
+      "secondsUnit": "秒",
+      "millisecondsUnit": "毫秒",
+      "localTime": "本地时间",
+      "utcTime": "UTC 时间",
+      "seconds": "秒",
+      "milliseconds": "毫秒",
+      "timestampError": "请输入 10 位秒级时间戳或 13 位毫秒级时间戳。",
+      "invalidTimestamp": "无效的时间戳。",
+      "dateRequired": "请选择或输入日期和时间。",
+      "invalidDate": "无效的日期输入。",
+      "exampleLoaded": "已加载示例值。请选择任意转换操作。"
+    },
+    "url": {
+      "input": "文本或 URL 组件",
+      "placeholder": "粘贴 URL、查询值或已编码字符串。",
+      "encode": "编码",
+      "decode": "解码",
+      "encodeError": "无法编码该输入。",
+      "decodeError": "输入不是有效的 URL 编码组件。"
+    },
+    "base64": {
+      "input": "文本或 Base64 输入",
+      "placeholder": "粘贴 UTF-8 文本或 Base64。",
+      "encode": "编码",
+      "decode": "解码",
+      "encodeError": "无法编码该输入。",
+      "decodeError": "输入不是有效的 Base64 文本。"
+    },
+    "ua": {
+      "input": "User-Agent 字符串",
+      "placeholder": "粘贴浏览器 User-Agent 字符串。",
+      "parse": "解析",
+      "result": "解析结果",
+      "emptyError": "请先粘贴 User-Agent 字符串再解析。"
+    },
+    "sls": {
+      "template": "模板",
+      "templates": {
+        "pvMinute": "按分钟统计 PV",
+        "timeBucket": "按选择的时间桶统计",
+        "groupBy": "按字段分组",
+        "filterList": "过滤日志",
+        "trackId": "按 trackId 聚合",
+        "missingB": "包含 A 但不包含 B 的记录"
+      },
+      "sourceUrl": "过滤 su 包含",
+      "type": "type",
+      "trackType": "trackType",
+      "step": "step",
+      "groupBy": "分组字段",
+      "timeBucket": "时间桶",
+      "timeBuckets": {
+        "10s": "10 秒",
+        "1m": "1 分钟",
+        "5m": "5 分钟",
+        "1h": "1 小时"
+      },
+      "limit": "限制条数",
+      "notice": "生成的 SQL 是模板，请根据自己的 SLS 日志结构调整字段名以及字符串或数字类型。",
+      "generate": "生成 SQL",
+      "output": "生成的 SQL"
+    }
+  }
+}

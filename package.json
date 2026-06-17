@@ -1,0 +1,23 @@
+{
+  "name": "nuxt-adsense-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "env -u DEBUG nuxt dev",
+    "build": "env -u DEBUG nuxt build",
+    "generate": "env -u DEBUG nuxt generate",
+    "preview": "env -u DEBUG nuxt preview"
+  },
+  "dependencies": {
+    "@nuxtjs/i18n": "^9.0.0",
+    "@nuxtjs/sitemap": "^6.1.0",
+    "@nuxtjs/tailwindcss": "^6.12.2",
+    "nuxt": "^3.15.4",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3"
+  }
+}

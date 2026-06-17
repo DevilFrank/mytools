@@ -1,0 +1,456 @@
+{
+  "site": {
+    "name": "Free Online Tools",
+    "shortName": "Tools",
+    "description": "Free browser-based tools for developers, data analysts, and website operators."
+  },
+  "nav": {
+    "primary": "Primary navigation",
+    "footer": "Footer navigation",
+    "tools": "Tools",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms"
+  },
+  "language": {
+    "label": "Language",
+    "english": "English",
+    "chinese": "简体中文"
+  },
+  "common": {
+    "browseTools": "Browse tools",
+    "privacyPolicy": "Privacy policy",
+    "viewAllTools": "View all tools",
+    "loadExample": "Load example",
+    "clear": "Clear",
+    "copyOutput": "Copy output",
+    "copyResult": "Copy result",
+    "copySql": "Copy SQL",
+    "copied": "Copied",
+    "output": "Output",
+    "result": "Result",
+    "example": "Example",
+    "howToUse": "How to use this tool",
+    "faq": "Frequently asked questions",
+    "privacyNote": "Privacy note",
+    "relatedTools": "Related tools"
+  },
+  "categories": {
+    "developer": "Developer Tools",
+    "encoding": "Encoding Tools",
+    "dateTime": "Date and Time Tools",
+    "diagnostics": "Web Diagnostics Tools",
+    "logAnalysis": "Log Analysis Tools"
+  },
+  "tools": {
+    "items": {
+      "jsonFormatter": {
+        "title": "JSON Formatter",
+        "description": "Format, validate, and minify JSON data directly in your browser."
+      },
+      "timestampConverter": {
+        "title": "Timestamp Converter",
+        "description": "Convert Unix timestamps to readable dates and convert dates back to timestamps."
+      },
+      "urlEncoder": {
+        "title": "URL Encoder / Decoder",
+        "description": "Encode and decode URL components for query strings, redirects, and web debugging."
+      },
+      "base64": {
+        "title": "Base64 Encoder / Decoder",
+        "description": "Encode UTF-8 text to Base64 and decode Base64 strings back to text."
+      },
+      "userAgentParser": {
+        "title": "User-Agent Parser",
+        "description": "Parse browser, operating system, device type, and rendering engine from a User-Agent string."
+      },
+      "slsSqlGenerator": {
+        "title": "Aliyun SLS SQL Generator",
+        "description": "Generate common Aliyun Log Service SQL templates for PV, time buckets, filters, and trackId analysis."
+      }
+    }
+  },
+  "footer": {
+    "description": "Browser-based utilities for developers, data analysts, website operators, and log analysis workflows."
+  },
+  "pages": {
+    "home": {
+      "seoTitle": "Free Online Tools for Developers and Website Operators",
+      "seoDescription": "A collection of browser-based tools for formatting data, converting timestamps, encoding text, parsing User-Agent strings, and generating log analysis SQL.",
+      "eyebrow": "Developer utilities",
+      "h1": "Free Online Tools for Developers and Website Operators",
+      "intro": "A collection of browser-based tools for developers, data analysts, and website operators. These tools help you format data, convert timestamps, encode text, parse User-Agent strings, and generate log analysis SQL.",
+      "privacy": "Most tools run locally in your browser. Your input is not uploaded unless explicitly stated, which makes the site useful for quick debugging without creating an account or sending private snippets to a remote service.",
+      "categoriesTitle": "Tool categories",
+      "recommendedTitle": "Recommended tools",
+      "recommendedIntro": "Start with the tools most commonly used for data cleanup, debugging, encoding, and log analysis.",
+      "staticTitle": "Built for static pages and readable content",
+      "staticIntro": "Each tool page includes a clear explanation, usage steps, examples, frequently asked questions, privacy notes, and links to related tools. The core page content is rendered as HTML during static generation, so visitors and search crawlers can read the page even when JavaScript is disabled."
+    },
+    "toolsIndex": {
+      "seoTitle": "All Online Tools",
+      "seoDescription": "Browse free online tools for JSON formatting, timestamp conversion, URL encoding, Base64 conversion, User-Agent parsing, and Aliyun SLS SQL generation.",
+      "h1": "All Online Tools",
+      "intro": "Browse free browser-based utilities for formatting data, converting dates, encoding text, checking User-Agent strings, and preparing Aliyun SLS SQL templates. Every tool is available without login and includes static documentation for quick reference."
+    },
+    "about": {
+      "seoTitle": "About",
+      "seoDescription": "Learn what Free Online Tools provides, who it is for, and how browser-based processing protects tool input by default.",
+      "h1": "About Free Online Tools",
+      "intro": "Free Online Tools is a small collection of practical utilities for developers, data analysts, website operators, and technical support teams. The first version focuses on common daily tasks: formatting JSON, converting Unix timestamps, encoding URL text, decoding Base64, parsing User-Agent strings, and generating Aliyun SLS SQL templates.",
+      "sections": [
+        {
+          "title": "What this site provides",
+          "body": "The site is designed around focused tools with readable explanations. Each tool page includes usage steps, an example, frequently asked questions, a privacy note, and links to related tools. The goal is to make the page useful both when you need a quick conversion and when you need to understand what the conversion means."
+        },
+        {
+          "title": "Are the tools free?",
+          "body": "Yes. The tools in this first version are free to access and do not require registration. The site may later use third-party advertising or analytics to support maintenance, but the tools will remain accessible without login."
+        },
+        {
+          "title": "Is my data uploaded?",
+          "body": "Tool input is processed locally in your browser by default. The static pages and client-side tool components are designed so that common formatting, encoding, decoding, and parsing tasks do not require sending your input to a server."
+        },
+        {
+          "title": "Who is it for?",
+          "body": "The tools are useful for front-end engineers, back-end engineers, data analysts, QA testers, site operators, and anyone who needs quick browser-based utilities while debugging websites, logs, APIs, redirects, tracking events, or text payloads."
+        }
+      ],
+      "contactTitle": "Contact",
+      "contactBody": "For feedback, bug reports, and feature requests, contact"
+    },
+    "contact": {
+      "seoTitle": "Contact",
+      "seoDescription": "Contact Free Online Tools for feedback, bug reports, and feature requests.",
+      "h1": "Contact",
+      "intro": "You can contact the site maintainer by email for feedback, bug reports, tool suggestions, or privacy questions.",
+      "emailLabel": "Email",
+      "sections": [
+        {
+          "title": "Bug reports",
+          "body": "When reporting a bug, include the tool name, the browser you used, the type of input that caused the issue, and the result you expected. Do not send private credentials, production secrets, or sensitive customer data."
+        },
+        {
+          "title": "Feature requests",
+          "body": "Feature requests are welcome when they fit the site's purpose: fast browser-based utilities with clear documentation. Useful details include the problem you are trying to solve, sample input and output, and whether the tool should work fully offline in the browser."
+        },
+        {
+          "title": "Privacy questions",
+          "body": "If you have questions about local processing, cookies, advertising services, or analytics, include the page URL and a short description of the concern so it can be reviewed clearly."
+        }
+      ]
+    },
+    "privacy": {
+      "seoTitle": "Privacy Policy",
+      "seoDescription": "Read the Privacy Policy for Free Online Tools, including local tool processing, cookies, Google Analytics, future Google AdSense use, external links, and contact details.",
+      "h1": "Privacy Policy",
+      "intro": "This Privacy Policy explains how Free Online Tools handles tool input, cookies, third-party services, Google Analytics, future advertising services such as Google AdSense, external links, and contact requests.",
+      "sections": [
+        {
+          "title": "Tool input data",
+          "body": "The tools in this first version process input locally in your browser by default. JSON formatting, timestamp conversion, URL encoding, Base64 conversion, User-Agent parsing, and SQL template generation do not require uploading your input to our server."
+        },
+        {
+          "title": "Cookies",
+          "body": "The site may use cookies or similar browser storage for basic preferences, analytics, or future advertising services. You can manage or block cookies through your browser settings."
+        },
+        {
+          "title": "Google Analytics",
+          "body": "The site may use Google Analytics to understand page performance, popular tools, and errors. Analytics is used for aggregate site operation insights and should not require users to submit private tool input."
+        },
+        {
+          "title": "Future Google AdSense and advertising",
+          "body": "The site may use Google AdSense or other third-party advertising services in the future. These services may use cookies or similar technologies to show, measure, and improve ads according to their own policies."
+        },
+        {
+          "title": "External links",
+          "body": "Some pages may link to external documentation or services. External sites have their own privacy policies, and this site is not responsible for their content or practices."
+        }
+      ],
+      "contactTitle": "Contact us",
+      "contactBody": "For privacy questions, contact"
+    },
+    "terms": {
+      "seoTitle": "Terms",
+      "seoDescription": "Read the terms for using Free Online Tools, including acceptable use, disclaimers, and user responsibility.",
+      "h1": "Terms",
+      "intro": "By using Free Online Tools, you agree to use the site responsibly and understand that the tools are provided for convenience, debugging, learning, and reference.",
+      "sections": [
+        {
+          "title": "Tools are for reference",
+          "body": "The tools are intended to help with common technical tasks, but generated output is not guaranteed to be correct for every environment. Review results before using them in production systems, security-sensitive workflows, or business decisions."
+        },
+        {
+          "title": "User responsibility",
+          "body": "You are responsible for the input you paste into the tools and for how you use the output. Do not paste passwords, access tokens, private keys, customer records, or other sensitive information unless you have verified that doing so is appropriate for your situation."
+        },
+        {
+          "title": "Acceptable use",
+          "body": "Do not misuse the site, attempt to disrupt service availability, scrape pages aggressively, bypass normal access controls, or use the tools for unlawful activity."
+        },
+        {
+          "title": "Disclaimer",
+          "body": "The site is provided as is, without warranties of accuracy, availability, or fitness for a particular purpose. Use the tools at your own risk."
+        }
+      ]
+    },
+    "toolPages": {
+      "jsonFormatter": {
+        "seoTitle": "JSON Formatter and Validator",
+        "seoDescription": "Format, validate, and minify JSON data directly in your browser.",
+        "h1": "JSON Formatter",
+        "intro": "Format, validate, and minify JSON data directly in your browser. This tool is useful when you need to inspect API responses, clean configuration files, check copied payloads, or reduce JSON into a compact single-line string.",
+        "toolHeading": "JSON formatter tool",
+        "howToUse": [
+          "Paste a JSON object, array, string, number, boolean, or null value into the input box. Select Format to convert valid JSON into an indented structure, Minify to remove extra whitespace, or Validate to check whether the input can be parsed as JSON.",
+          "If the input contains a syntax problem, the tool shows the parsing error instead of changing the output. Common issues include missing commas, trailing commas, single quotes around strings, unescaped line breaks, and comments copied from JavaScript files."
+        ],
+        "example": "A compact JSON value with fields like name and enabled can be formatted into a readable multi-line block. The same input can also be minified again for use in a request body, environment variable, or log field.",
+        "privacy": "Your input is processed locally in your browser and is not uploaded to our server.",
+        "faq": [
+          {
+            "q": "What is JSON formatting?",
+            "a": "JSON formatting adds indentation and line breaks to valid JSON so nested objects and arrays are easier to read."
+          },
+          {
+            "q": "What is the difference between a formatter and a minifier?",
+            "a": "A formatter improves readability, while a minifier removes unnecessary whitespace to make the JSON shorter."
+          },
+          {
+            "q": "Why does valid JavaScript fail as JSON?",
+            "a": "JSON is stricter than JavaScript object syntax. JSON requires double-quoted property names and does not allow comments or trailing commas."
+          },
+          {
+            "q": "Is my JSON uploaded?",
+            "a": "No. The formatting, validation, and minifying logic runs locally in your browser."
+          }
+        ]
+      },
+      "timestampConverter": {
+        "seoTitle": "Timestamp Converter",
+        "seoDescription": "Convert Unix timestamps to local and UTC dates, and convert dates back to seconds and milliseconds timestamps.",
+        "h1": "Timestamp Converter",
+        "intro": "Convert Unix timestamps into readable local and UTC dates, or convert a date and time back into seconds and milliseconds. The converter detects 10-digit second timestamps and 13-digit millisecond timestamps.",
+        "toolHeading": "Timestamp converter tool",
+        "howToUse": [
+          "To convert a timestamp to a date, paste a 10-digit Unix timestamp in seconds or a 13-digit timestamp in milliseconds, then run the conversion. The result shows the detected unit, local time, UTC time, seconds, and milliseconds.",
+          "To convert a date to a timestamp, choose a date and time in the date input. The result shows both seconds and milliseconds so you can use the value in APIs, logs, database fields, or analytics systems."
+        ],
+        "example": "The timestamp 1704067200 represents a seconds-based Unix timestamp. The same instant in milliseconds is 1704067200000. Many APIs use seconds, while JavaScript dates and browser timers usually use milliseconds.",
+        "privacy": "Your input is processed locally in your browser and is not uploaded to our server.",
+        "faq": [
+          {
+            "q": "What is a Unix timestamp?",
+            "a": "A Unix timestamp counts time from 1970-01-01 00:00:00 UTC. It is often stored as seconds or milliseconds."
+          },
+          {
+            "q": "How do I know if a timestamp is seconds or milliseconds?",
+            "a": "A 10-digit value is commonly seconds. A 13-digit value is commonly milliseconds."
+          },
+          {
+            "q": "Why are local time and UTC different?",
+            "a": "UTC is a global reference time. Local time applies your device timezone offset, which can change the displayed hour or date."
+          }
+        ]
+      },
+      "urlEncoder": {
+        "seoTitle": "URL Encoder and Decoder",
+        "seoDescription": "Encode and decode URL components for query strings, redirect URLs, tracking parameters, and web debugging.",
+        "h1": "URL Encoder / Decoder",
+        "intro": "Encode and decode URL components for query strings, redirect URLs, analytics parameters, and debugging. The tool uses browser URL component encoding so spaces, symbols, and non-ASCII text can be safely placed in a URL parameter.",
+        "toolHeading": "URL encoder and decoder tool",
+        "howToUse": [
+          "Paste plain text or a URL component into the input box and choose Encode to escape characters that have special meaning in URLs. Paste an encoded value and choose Decode to convert percent-encoded sequences back to readable text.",
+          "Decode errors usually happen when the input contains incomplete percent escapes such as %E0%A4 or a standalone percent sign. In that case, check the original value before using it in a redirect or request."
+        ],
+        "example": "The text hello world becomes hello%20world when encoded as a URL component. A full redirect URL can also be encoded before placing it inside another query parameter.",
+        "privacy": "Your input is processed locally in your browser and is not uploaded to our server.",
+        "faq": [
+          {
+            "q": "What is URL encoding?",
+            "a": "URL encoding converts characters into a safe percent-encoded form so they can be used inside URLs."
+          },
+          {
+            "q": "When should I encode a URL value?",
+            "a": "Encode values before placing them in query parameters, redirect parameters, or tracking links where spaces and symbols could break parsing."
+          },
+          {
+            "q": "What is the difference between encodeURI and encodeURIComponent?",
+            "a": "encodeURI keeps URL separators such as ? and &. encodeURIComponent encodes a single component more aggressively."
+          }
+        ]
+      },
+      "base64": {
+        "seoTitle": "Base64 Encoder and Decoder",
+        "seoDescription": "Encode UTF-8 text to Base64 and decode Base64 strings back to readable text in your browser.",
+        "h1": "Base64 Encoder / Decoder",
+        "intro": "Encode UTF-8 text to Base64 and decode Base64 strings back to text. This tool is useful for inspecting API payloads, small configuration values, email content, and text snippets that have been represented in Base64 form.",
+        "toolHeading": "Base64 encoder and decoder tool",
+        "howToUse": [
+          "Paste readable text and choose Encode to convert it into Base64. Paste a Base64 string and choose Decode to recover the original UTF-8 text. Invalid Base64 input is caught and shown as an error instead of breaking the page.",
+          "The tool supports UTF-8 text, so non-English characters can be encoded and decoded for everyday debugging tasks. For binary files, use a dedicated file encoder instead of pasting large binary content into a text area."
+        ],
+        "example": "The text Hello becomes SGVsbG8= in Base64. The value is not encrypted; it is simply represented with a character set that is convenient for transport in text-based systems.",
+        "privacy": "Your input is processed locally in your browser and is not uploaded to our server.",
+        "faq": [
+          {
+            "q": "What is Base64?",
+            "a": "Base64 is an encoding method that represents data using letters, numbers, plus, slash, and equals characters."
+          },
+          {
+            "q": "Is Base64 encryption?",
+            "a": "No. Base64 does not hide or protect data. Anyone can decode it back to the original content."
+          },
+          {
+            "q": "What are common use cases?",
+            "a": "Common uses include small API payloads, email formats, data URLs, tokens that are not secrets, and text-safe transport."
+          }
+        ]
+      },
+      "userAgentParser": {
+        "seoTitle": "User-Agent Parser",
+        "seoDescription": "Parse browser, operating system, device type, and rendering engine from a User-Agent string.",
+        "h1": "User-Agent Parser",
+        "intro": "Parse a User-Agent string to identify the likely browser, operating system, device type, and rendering engine. This first version uses lightweight browser-side rules for quick diagnostics.",
+        "toolHeading": "User-Agent parser tool",
+        "howToUse": [
+          "Paste a browser User-Agent string into the input box and select Parse. The result shows a JSON object with browser, operating system, device type, and rendering engine fields.",
+          "User-Agent strings are not a perfect source of truth. Browsers may reduce, freeze, or spoof parts of the string, and some embedded webviews use custom formats. Treat the parsed result as a debugging hint rather than a security decision."
+        ],
+        "example": "A Chrome desktop User-Agent often contains Windows NT, AppleWebKit, Chrome, and Safari. The parser uses these markers to infer Windows, Chrome, Desktop, and Blink.",
+        "privacy": "Your input is processed locally in your browser and is not uploaded to our server.",
+        "faq": [
+          {
+            "q": "What is a User-Agent string?",
+            "a": "It is a text value sent by many browsers and clients to describe the software making a request."
+          },
+          {
+            "q": "What information can it reveal?",
+            "a": "It may reveal browser family, operating system, device class, rendering engine, and compatibility markers."
+          },
+          {
+            "q": "Should I rely on User-Agent for feature detection?",
+            "a": "Use feature detection when possible. User-Agent parsing is better for diagnostics, analytics grouping, and log investigation."
+          }
+        ]
+      },
+      "slsSqlGenerator": {
+        "seoTitle": "Aliyun SLS SQL Generator",
+        "seoDescription": "Generate Aliyun SLS SQL templates for PV counts, time buckets, field grouping, filters, trackId aggregation, and records with A but without B.",
+        "h1": "Aliyun SLS SQL Generator",
+        "intro": "Generate common Aliyun Log Service SQL templates for page-view counts, time bucket aggregation, field grouping, URL filters, event filters, trackId aggregation, and records that contain one event but not another.",
+        "toolHeading": "SLS SQL generator tool",
+        "howToUse": [
+          "Choose a template, enter optional filters such as su, type, trackType, or step, then review the generated SQL. The generator supports PV by minute, custom time buckets, group by field, simple filtered log queries, trackId aggregation, and a template for records with event A but without event B.",
+          "The generated SQL is meant as a starting point. Aliyun SLS projects often use different field names and field types, so you should verify whether each field is stored as a string or number before running the query in production."
+        ],
+        "example": "To count page views by 10-second buckets for a checkout URL, select the time bucket template, choose 10 seconds, and enter /checkout in the su filter. The generated SQL groups logs by a formatted time bucket and orders the result by time.",
+        "privacy": "Your input is processed locally in your browser and is not uploaded to our server.",
+        "faq": [
+          {
+            "q": "What is Aliyun SLS SQL?",
+            "a": "Aliyun SLS SQL is the query language used in Alibaba Cloud Log Service to filter, aggregate, and analyze log data."
+          },
+          {
+            "q": "How do I group logs by time bucket?",
+            "a": "Use the timestamp field __time__, subtract the remainder for the bucket size, format it, and group by the bucket alias."
+          },
+          {
+            "q": "How do I filter by URL or event type?",
+            "a": "Use su LIKE '%value%' for URL fragments and equality filters such as type = 6 or trackType = 1 for numeric event fields."
+          },
+          {
+            "q": "Can I run the generated SQL without changes?",
+            "a": "Usually you should review it first. Field names, value types, and log table behavior may differ between SLS projects."
+          }
+        ]
+      }
+    }
+  },
+  "toolUi": {
+    "json": {
+      "input": "JSON input",
+      "placeholder": "Paste JSON here.",
+      "format": "Format",
+      "minify": "Minify",
+      "validate": "Validate",
+      "actions": "JSON actions",
+      "outputPlaceholder": "Formatted or minified JSON will appear here.",
+      "emptyError": "Paste JSON input before running this action.",
+      "invalidError": "Invalid JSON input.",
+      "formatted": "JSON formatted successfully.",
+      "minified": "JSON minified successfully.",
+      "valid": "Valid JSON.",
+      "exampleLoaded": "Example JSON loaded."
+    },
+    "timestamp": {
+      "timestampLabel": "Unix timestamp",
+      "dateLabel": "Date and time",
+      "toDate": "Convert timestamp to date",
+      "toTimestamp": "Convert date to timestamp",
+      "unit": "Input unit",
+      "secondsUnit": "seconds",
+      "millisecondsUnit": "milliseconds",
+      "localTime": "Local time",
+      "utcTime": "UTC time",
+      "seconds": "Seconds",
+      "milliseconds": "Milliseconds",
+      "timestampError": "Enter a 10-digit seconds timestamp or a 13-digit milliseconds timestamp.",
+      "invalidTimestamp": "Invalid timestamp.",
+      "dateRequired": "Choose or enter a date and time.",
+      "invalidDate": "Invalid date input.",
+      "exampleLoaded": "Example values loaded. Run either conversion action."
+    },
+    "url": {
+      "input": "Text or URL component",
+      "placeholder": "Paste a URL, query value, or encoded string.",
+      "encode": "Encode",
+      "decode": "Decode",
+      "encodeError": "Unable to encode this input.",
+      "decodeError": "The input is not a valid URL-encoded component."
+    },
+    "base64": {
+      "input": "Text or Base64 input",
+      "placeholder": "Paste UTF-8 text or Base64.",
+      "encode": "Encode",
+      "decode": "Decode",
+      "encodeError": "Unable to encode this input.",
+      "decodeError": "The input is not valid Base64 text."
+    },
+    "ua": {
+      "input": "User-Agent string",
+      "placeholder": "Paste a browser User-Agent string.",
+      "parse": "Parse",
+      "result": "Parsed result",
+      "emptyError": "Paste a User-Agent string before parsing."
+    },
+    "sls": {
+      "template": "Template",
+      "templates": {
+        "pvMinute": "Count PV by minute",
+        "timeBucket": "Count by selected time bucket",
+        "groupBy": "Group by field",
+        "filterList": "Filter logs",
+        "trackId": "Aggregate by trackId",
+        "missingB": "Records with A and without B"
+      },
+      "sourceUrl": "Filter su like",
+      "type": "type",
+      "trackType": "trackType",
+      "step": "step",
+      "groupBy": "Group by field",
+      "timeBucket": "Time bucket",
+      "timeBuckets": {
+        "10s": "10 seconds",
+        "1m": "1 minute",
+        "5m": "5 minutes",
+        "1h": "1 hour"
+      },
+      "limit": "Limit",
+      "notice": "Generated SQL is a template. Adjust field names and string or number types to match your own SLS log schema.",
+      "generate": "Generate SQL",
+      "output": "Generated SQL"
+    }
+  }
+}
