@@ -1,6 +1,9 @@
 import process from 'node:process'
 
-const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'https://example.com'
+const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'https://the0705.com'
+const canonicalSiteUrl = process.env.NUXT_PUBLIC_CANONICAL_SITE_URL || siteUrl
+const gtagId = process.env.NUXT_PUBLIC_GTAG_ID || 'G-PZHTHBJXYN'
+const adsenseClient = process.env.NUXT_PUBLIC_ADSENSE_CLIENT || 'ca-pub-1090956656099890'
 
 export default defineNuxtConfig({
   ssr: true,
@@ -14,6 +17,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl,
+      canonicalSiteUrl,
       contactEmail: process.env.NUXT_PUBLIC_CONTACT_EMAIL || 'contact@example.com',
     },
   },
@@ -34,7 +38,7 @@ export default defineNuxtConfig({
       script: [
         {
           async: true,
-          src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1090956656099890',
+          src: `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`,
           crossorigin: 'anonymous',
         },
       ],
@@ -42,7 +46,7 @@ export default defineNuxtConfig({
   },
 
   gtag: {
-    id: 'G-PZHTHBJXYN',
+    id: gtagId,
     enabled: true,
   },
 

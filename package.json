@@ -3,10 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "env -u DEBUG nuxt dev",
-    "build": "env -u DEBUG nuxt build",
-    "generate": "env -u DEBUG nuxt generate",
-    "preview": "env -u DEBUG nuxt preview"
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^9.0.0",

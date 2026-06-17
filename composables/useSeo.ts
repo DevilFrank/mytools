@@ -9,14 +9,15 @@ interface SeoOptions {
 export function useSeo(options: SeoOptions) {
   const config = useRuntimeConfig()
   const { locale, t } = useI18n()
-  const siteUrl = String(config.public.siteUrl || 'https://example.com')
+  const siteUrl = String(config.public.siteUrl || 'https://the0705.com')
+  const canonicalBase = String(config.public.canonicalSiteUrl || siteUrl)
   const normalizedPath = options.path === '/' ? '/' : `/${options.path.replace(/^\/+/, '')}`
   const localizedPath = locale.value === 'zh-CN'
     ? normalizedPath === '/' ? '/zh-CN' : `/zh-CN${normalizedPath}`
     : normalizedPath
-  const canonical = new URL(localizedPath, siteUrl).toString()
-  const englishUrl = new URL(normalizedPath, siteUrl).toString()
-  const zhUrl = new URL(normalizedPath === '/' ? '/zh-CN' : `/zh-CN${normalizedPath}`, siteUrl).toString()
+  const canonical = new URL(localizedPath, canonicalBase).toString()
+  const englishUrl = new URL(normalizedPath, canonicalBase).toString()
+  const zhUrl = new URL(normalizedPath === '/' ? '/zh-CN' : `/zh-CN${normalizedPath}`, canonicalBase).toString()
   const title = `${options.title} - ${t('site.name')}`
 
   useSeoMeta({
