@@ -15,11 +15,11 @@ function encodeText() {
   error.value = ''
   try {
     output.value = encodeURIComponent(input.value)
-    trackToolEvent(toolName, 'url_encode')
+    trackToolEvent({ toolName, action: 'url_encode' })
   } catch {
     output.value = ''
     error.value = t('toolUi.url.encodeError')
-    trackToolEvent(toolName, 'url_decode_error')
+    trackToolEvent({ toolName, action: 'url_decode_error' })
   }
 }
 
@@ -27,11 +27,11 @@ function decodeText() {
   error.value = ''
   try {
     output.value = decodeURIComponent(input.value)
-    trackToolEvent(toolName, 'url_decode')
+    trackToolEvent({ toolName, action: 'url_decode' })
   } catch {
     output.value = ''
     error.value = t('toolUi.url.decodeError')
-    trackToolEvent(toolName, 'url_decode_error')
+    trackToolEvent({ toolName, action: 'url_decode_error' })
   }
 }
 
@@ -39,19 +39,19 @@ function loadExample() {
   input.value = 'https://example.com/search?q=hello world&lang=en'
   output.value = ''
   error.value = ''
-  trackToolEvent(toolName, 'load_example')
+  trackToolEvent({ toolName, action: 'load_example' })
 }
 
 function clearAll() {
   input.value = ''
   output.value = ''
   error.value = ''
-  trackToolEvent(toolName, 'clear_input')
+  trackToolEvent({ toolName, action: 'clear_input' })
 }
 
 async function copyOutput() {
   await copyText(output.value)
-  trackToolEvent(toolName, 'copy_result')
+  trackToolEvent({ toolName, action: 'copy_result' })
 }
 </script>
 

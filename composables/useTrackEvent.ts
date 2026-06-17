@@ -1,33 +1,28 @@
-interface GtagComposable {
-  gtag: (command: 'event', action: string, params: Record<string, string | number>) => void
-}
-
-declare global {
-  interface Window {
-    gtag?: (command: 'event', action: string, params: Record<string, string | number>) => void
-  }
+type ToolEventParams = {
+  toolName: string
+  action: string
+  label?: string
+  value?: number
 }
 
 export function useTrackEvent() {
-  function trackToolEvent(toolName: string, action: string, label?: string, value?: number) {
+  const { gtag } = useGtag()
+
+  function trackToolEvent(params: ToolEventParams) {
     if (!import.meta.client) return
 
-    const params: Record<string, string | number> = {
-      tool_name: toolName,
+    const payload: Record<string, string | number | boolean | undefined> = {
+      tool_name: params.toolName,
+      event_label: params.label,
+      value: params.value,
     }
 
-    if (label) params.label = label
-    if (typeof value === 'number') params.value = value
-
-    // @ts-ignore useGtag is auto-imported when nuxt-gtag is available.
-    if (typeof useGtag === 'function') {
-      // @ts-ignore useGtag is auto-imported when nuxt-gtag is available.
-      const { gtag } = useGtag() as GtagComposable
-      gtag('event', action, params)
-      return
+    if (process.dev) {
+      payload.debug_mode = true
+      console.log('[GA event]', params.action, payload)
     }
 
-    window.gtag?.('event', action, params)
+    gtag('event', params.action, payload)
   }
 
   return {

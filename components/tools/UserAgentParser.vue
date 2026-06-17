@@ -68,26 +68,26 @@ function parseUserAgent() {
   }
 
   result.value = JSON.stringify(parsed, null, 2)
-  trackToolEvent(toolName, 'ua_parse')
+  trackToolEvent({ toolName, action: 'ua_parse' })
 }
 
 function loadExample() {
   input.value = exampleUa
   result.value = ''
   error.value = ''
-  trackToolEvent(toolName, 'load_example')
+  trackToolEvent({ toolName, action: 'load_example' })
 }
 
 function clearAll() {
   input.value = ''
   result.value = ''
   error.value = ''
-  trackToolEvent(toolName, 'clear_input')
+  trackToolEvent({ toolName, action: 'clear_input' })
 }
 
 async function copyResult() {
   await copyText(result.value)
-  trackToolEvent(toolName, 'copy_result')
+  trackToolEvent({ toolName, action: 'copy_result' })
 }
 </script>
 

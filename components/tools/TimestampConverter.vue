@@ -37,7 +37,7 @@ function timestampToDate() {
     `${t('toolUi.timestamp.seconds')}: ${Math.floor(milliseconds / 1000)}`,
     `${t('toolUi.timestamp.milliseconds')}: ${milliseconds}`,
   ].join('\n')
-  trackToolEvent(toolName, 'timestamp_to_date')
+  trackToolEvent({ toolName, action: 'timestamp_to_date' })
 }
 
 function dateToTimestamp() {
@@ -62,7 +62,7 @@ function dateToTimestamp() {
     `${t('toolUi.timestamp.seconds')}: ${Math.floor(date.getTime() / 1000)}`,
     `${t('toolUi.timestamp.milliseconds')}: ${date.getTime()}`,
   ].join('\n')
-  trackToolEvent(toolName, 'date_to_timestamp')
+  trackToolEvent({ toolName, action: 'date_to_timestamp' })
 }
 
 function loadExample() {
@@ -70,7 +70,7 @@ function loadExample() {
   dateInput.value = '2024-01-01T00:00'
   error.value = ''
   result.value = t('toolUi.timestamp.exampleLoaded')
-  trackToolEvent(toolName, 'load_example')
+  trackToolEvent({ toolName, action: 'load_example' })
 }
 
 function clearAll() {
@@ -78,12 +78,12 @@ function clearAll() {
   dateInput.value = ''
   result.value = ''
   error.value = ''
-  trackToolEvent(toolName, 'clear_input')
+  trackToolEvent({ toolName, action: 'clear_input' })
 }
 
 async function copyResult() {
   await copyText(result.value)
-  trackToolEvent(toolName, 'copy_result')
+  trackToolEvent({ toolName, action: 'copy_result' })
 }
 </script>
 

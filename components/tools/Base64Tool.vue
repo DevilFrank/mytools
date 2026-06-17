@@ -23,7 +23,7 @@ function encodeText() {
   error.value = ''
   try {
     output.value = encodeBase64(input.value)
-    trackToolEvent(toolName, 'base64_encode')
+    trackToolEvent({ toolName, action: 'base64_encode' })
   } catch {
     output.value = ''
     error.value = t('toolUi.base64.encodeError')
@@ -34,11 +34,11 @@ function decodeText() {
   error.value = ''
   try {
     output.value = decodeBase64(input.value.trim())
-    trackToolEvent(toolName, 'base64_decode')
+    trackToolEvent({ toolName, action: 'base64_decode' })
   } catch {
     output.value = ''
     error.value = t('toolUi.base64.decodeError')
-    trackToolEvent(toolName, 'base64_decode_error')
+    trackToolEvent({ toolName, action: 'base64_decode_error' })
   }
 }
 
@@ -46,19 +46,19 @@ function loadExample() {
   input.value = 'Hello, 世界'
   output.value = ''
   error.value = ''
-  trackToolEvent(toolName, 'load_example')
+  trackToolEvent({ toolName, action: 'load_example' })
 }
 
 function clearAll() {
   input.value = ''
   output.value = ''
   error.value = ''
-  trackToolEvent(toolName, 'clear_input')
+  trackToolEvent({ toolName, action: 'clear_input' })
 }
 
 async function copyOutput() {
   await copyText(output.value)
-  trackToolEvent(toolName, 'copy_result')
+  trackToolEvent({ toolName, action: 'copy_result' })
 }
 </script>
 

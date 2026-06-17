@@ -37,10 +37,10 @@ function formatJson() {
   try {
     output.value = JSON.stringify(parseInput(), null, 2)
     message.value = t('toolUi.json.formatted')
-    trackToolEvent(toolName, 'json_format')
+    trackToolEvent({ toolName, action: 'json_format' })
   } catch (err) {
     error.value = err instanceof Error ? err.message : t('toolUi.json.invalidError')
-    trackToolEvent(toolName, 'json_format_error')
+    trackToolEvent({ toolName, action: 'json_format_error' })
   }
 }
 
@@ -48,10 +48,10 @@ function minifyJson() {
   try {
     output.value = JSON.stringify(parseInput())
     message.value = t('toolUi.json.minified')
-    trackToolEvent(toolName, 'json_minify')
+    trackToolEvent({ toolName, action: 'json_minify' })
   } catch (err) {
     error.value = err instanceof Error ? err.message : t('toolUi.json.invalidError')
-    trackToolEvent(toolName, 'json_minify_error')
+    trackToolEvent({ toolName, action: 'json_minify_error' })
   }
 }
 
@@ -70,7 +70,7 @@ function clearInput() {
   output.value = ''
   error.value = ''
   message.value = ''
-  trackToolEvent(toolName, 'clear_input')
+  trackToolEvent({ toolName, action: 'clear_input' })
 }
 
 function loadExample() {
@@ -78,12 +78,12 @@ function loadExample() {
   output.value = ''
   error.value = ''
   message.value = t('toolUi.json.exampleLoaded')
-  trackToolEvent(toolName, 'load_example')
+  trackToolEvent({ toolName, action: 'load_example' })
 }
 
 async function copyOutput() {
   await copyText(output.value)
-  trackToolEvent(toolName, 'copy_result')
+  trackToolEvent({ toolName, action: 'copy_result' })
 }
 </script>
 

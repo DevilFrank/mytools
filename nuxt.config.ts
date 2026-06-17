@@ -5,7 +5,7 @@ const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'https://example.com'
 export default defineNuxtConfig({
   ssr: true,
 
-  modules: ['@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap'],
+  modules: ['@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap', 'nuxt-gtag'],
 
   tailwindcss: {
     cssPath: '~/assets/css/main.css',
@@ -34,23 +34,16 @@ export default defineNuxtConfig({
       script: [
         {
           async: true,
-          src: 'https://www.googletagmanager.com/gtag/js?id=G-PZHTHBJXYN',
-        },
-        {
-          innerHTML: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-PZHTHBJXYN');
-          `,
-        },
-        {
-          async: true,
           src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1090956656099890',
           crossorigin: 'anonymous',
         },
       ],
     },
+  },
+
+  gtag: {
+    id: 'G-PZHTHBJXYN',
+    enabled: true,
   },
 
   site: {

@@ -150,7 +150,7 @@ LIMIT ${limit}`
 
 function generateSqlByClick() {
   generateSql()
-  trackToolEvent(toolName, 'sls_sql_generate')
+  trackToolEvent({ toolName, action: 'sls_sql_generate' })
 }
 
 function loadExample() {
@@ -163,7 +163,7 @@ function loadExample() {
   form.limit = 100
   template.value = 'missing-b'
   generateSql()
-  trackToolEvent(toolName, 'load_example')
+  trackToolEvent({ toolName, action: 'load_example' })
 }
 
 function clearAll() {
@@ -176,12 +176,12 @@ function clearAll() {
   form.limit = 100
   template.value = 'pv-minute'
   sql.value = ''
-  trackToolEvent(toolName, 'clear_input')
+  trackToolEvent({ toolName, action: 'clear_input' })
 }
 
 async function copySql() {
   await copyText(sql.value)
-  trackToolEvent(toolName, 'copy_result')
+  trackToolEvent({ toolName, action: 'copy_result' })
 }
 
 generateSql()
