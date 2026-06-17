@@ -517,38 +517,20 @@ const sources = [
             "/zh-CN/privacy-policy",
             "/zh-CN/terms",
             {
-                "loc": "/about",
+                "loc": "/privacy-policy",
                 "_sitemap": "en",
                 "alternatives": [
                     {
                         "hreflang": "en",
-                        "href": "/about"
+                        "href": "/privacy-policy"
                     },
                     {
                         "hreflang": "zh-CN",
-                        "href": "/zh-CN/about"
+                        "href": "/zh-CN/privacy-policy"
                     },
                     {
                         "hreflang": "x-default",
-                        "href": "/about"
-                    }
-                ]
-            },
-            {
-                "loc": "/",
-                "_sitemap": "en",
-                "alternatives": [
-                    {
-                        "hreflang": "en",
-                        "href": "/"
-                    },
-                    {
-                        "hreflang": "zh-CN",
-                        "href": "/zh-CN"
-                    },
-                    {
-                        "hreflang": "x-default",
-                        "href": "/"
+                        "href": "/privacy-policy"
                     }
                 ]
             },
@@ -571,20 +553,20 @@ const sources = [
                 ]
             },
             {
-                "loc": "/tools/base64",
+                "loc": "/contact",
                 "_sitemap": "en",
                 "alternatives": [
                     {
                         "hreflang": "en",
-                        "href": "/tools/base64"
+                        "href": "/contact"
                     },
                     {
                         "hreflang": "zh-CN",
-                        "href": "/zh-CN/tools/base64"
+                        "href": "/zh-CN/contact"
                     },
                     {
                         "hreflang": "x-default",
-                        "href": "/tools/base64"
+                        "href": "/contact"
                     }
                 ]
             },
@@ -603,6 +585,42 @@ const sources = [
                     {
                         "hreflang": "x-default",
                         "href": "/tools/url-encoder"
+                    }
+                ]
+            },
+            {
+                "loc": "/tools/json-formatter",
+                "_sitemap": "en",
+                "alternatives": [
+                    {
+                        "hreflang": "en",
+                        "href": "/tools/json-formatter"
+                    },
+                    {
+                        "hreflang": "zh-CN",
+                        "href": "/zh-CN/tools/json-formatter"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/tools/json-formatter"
+                    }
+                ]
+            },
+            {
+                "loc": "/about",
+                "_sitemap": "en",
+                "alternatives": [
+                    {
+                        "hreflang": "en",
+                        "href": "/about"
+                    },
+                    {
+                        "hreflang": "zh-CN",
+                        "href": "/zh-CN/about"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/about"
                     }
                 ]
             },
@@ -643,42 +661,6 @@ const sources = [
                 ]
             },
             {
-                "loc": "/tools/sls-sql-generator",
-                "_sitemap": "en",
-                "alternatives": [
-                    {
-                        "hreflang": "en",
-                        "href": "/tools/sls-sql-generator"
-                    },
-                    {
-                        "hreflang": "zh-CN",
-                        "href": "/zh-CN/tools/sls-sql-generator"
-                    },
-                    {
-                        "hreflang": "x-default",
-                        "href": "/tools/sls-sql-generator"
-                    }
-                ]
-            },
-            {
-                "loc": "/tools/json-formatter",
-                "_sitemap": "en",
-                "alternatives": [
-                    {
-                        "hreflang": "en",
-                        "href": "/tools/json-formatter"
-                    },
-                    {
-                        "hreflang": "zh-CN",
-                        "href": "/zh-CN/tools/json-formatter"
-                    },
-                    {
-                        "hreflang": "x-default",
-                        "href": "/tools/json-formatter"
-                    }
-                ]
-            },
-            {
                 "loc": "/tools/user-agent-parser",
                 "_sitemap": "en",
                 "alternatives": [
@@ -697,20 +679,38 @@ const sources = [
                 ]
             },
             {
-                "loc": "/privacy-policy",
+                "loc": "/tools/base64",
                 "_sitemap": "en",
                 "alternatives": [
                     {
                         "hreflang": "en",
-                        "href": "/privacy-policy"
+                        "href": "/tools/base64"
                     },
                     {
                         "hreflang": "zh-CN",
-                        "href": "/zh-CN/privacy-policy"
+                        "href": "/zh-CN/tools/base64"
                     },
                     {
                         "hreflang": "x-default",
-                        "href": "/privacy-policy"
+                        "href": "/tools/base64"
+                    }
+                ]
+            },
+            {
+                "loc": "/tools/sls-sql-generator",
+                "_sitemap": "en",
+                "alternatives": [
+                    {
+                        "hreflang": "en",
+                        "href": "/tools/sls-sql-generator"
+                    },
+                    {
+                        "hreflang": "zh-CN",
+                        "href": "/zh-CN/tools/sls-sql-generator"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/tools/sls-sql-generator"
                     }
                 ]
             },
@@ -733,6 +733,42 @@ const sources = [
                 ]
             },
             {
+                "loc": "/zh-CN/tools/json-formatter",
+                "_sitemap": "zh-CN",
+                "alternatives": [
+                    {
+                        "hreflang": "en",
+                        "href": "/tools/json-formatter"
+                    },
+                    {
+                        "hreflang": "zh-CN",
+                        "href": "/zh-CN/tools/json-formatter"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/tools/json-formatter"
+                    }
+                ]
+            },
+            {
+                "loc": "/zh-CN/tools",
+                "_sitemap": "zh-CN",
+                "alternatives": [
+                    {
+                        "hreflang": "en",
+                        "href": "/tools"
+                    },
+                    {
+                        "hreflang": "zh-CN",
+                        "href": "/zh-CN/tools"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/tools"
+                    }
+                ]
+            },
+            {
                 "loc": "/zh-CN/contact",
                 "_sitemap": "zh-CN",
                 "alternatives": [
@@ -747,6 +783,114 @@ const sources = [
                     {
                         "hreflang": "x-default",
                         "href": "/contact"
+                    }
+                ]
+            },
+            {
+                "loc": "/zh-CN/tools/timestamp-converter",
+                "_sitemap": "zh-CN",
+                "alternatives": [
+                    {
+                        "hreflang": "en",
+                        "href": "/tools/timestamp-converter"
+                    },
+                    {
+                        "hreflang": "zh-CN",
+                        "href": "/zh-CN/tools/timestamp-converter"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/tools/timestamp-converter"
+                    }
+                ]
+            },
+            {
+                "loc": "/zh-CN/tools/user-agent-parser",
+                "_sitemap": "zh-CN",
+                "alternatives": [
+                    {
+                        "hreflang": "en",
+                        "href": "/tools/user-agent-parser"
+                    },
+                    {
+                        "hreflang": "zh-CN",
+                        "href": "/zh-CN/tools/user-agent-parser"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/tools/user-agent-parser"
+                    }
+                ]
+            },
+            {
+                "loc": "/zh-CN/tools/sls-sql-generator",
+                "_sitemap": "zh-CN",
+                "alternatives": [
+                    {
+                        "hreflang": "en",
+                        "href": "/tools/sls-sql-generator"
+                    },
+                    {
+                        "hreflang": "zh-CN",
+                        "href": "/zh-CN/tools/sls-sql-generator"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/tools/sls-sql-generator"
+                    }
+                ]
+            },
+            {
+                "loc": "/zh-CN/tools/base64",
+                "_sitemap": "zh-CN",
+                "alternatives": [
+                    {
+                        "hreflang": "en",
+                        "href": "/tools/base64"
+                    },
+                    {
+                        "hreflang": "zh-CN",
+                        "href": "/zh-CN/tools/base64"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/tools/base64"
+                    }
+                ]
+            },
+            {
+                "loc": "/zh-CN/tools/url-encoder",
+                "_sitemap": "zh-CN",
+                "alternatives": [
+                    {
+                        "hreflang": "en",
+                        "href": "/tools/url-encoder"
+                    },
+                    {
+                        "hreflang": "zh-CN",
+                        "href": "/zh-CN/tools/url-encoder"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/tools/url-encoder"
+                    }
+                ]
+            },
+            {
+                "loc": "/",
+                "_sitemap": "en",
+                "alternatives": [
+                    {
+                        "hreflang": "en",
+                        "href": "/"
+                    },
+                    {
+                        "hreflang": "zh-CN",
+                        "href": "/zh-CN"
+                    },
+                    {
+                        "hreflang": "x-default",
+                        "href": "/"
                     }
                 ]
             },
@@ -804,168 +948,24 @@ const sources = [
                     }
                 ]
             },
-            {
-                "loc": "/contact",
-                "_sitemap": "en",
-                "alternatives": [
-                    {
-                        "hreflang": "en",
-                        "href": "/contact"
-                    },
-                    {
-                        "hreflang": "zh-CN",
-                        "href": "/zh-CN/contact"
-                    },
-                    {
-                        "hreflang": "x-default",
-                        "href": "/contact"
-                    }
-                ]
-            },
-            {
-                "loc": "/zh-CN/tools/url-encoder",
-                "_sitemap": "zh-CN",
-                "alternatives": [
-                    {
-                        "hreflang": "en",
-                        "href": "/tools/url-encoder"
-                    },
-                    {
-                        "hreflang": "zh-CN",
-                        "href": "/zh-CN/tools/url-encoder"
-                    },
-                    {
-                        "hreflang": "x-default",
-                        "href": "/tools/url-encoder"
-                    }
-                ]
-            },
-            {
-                "loc": "/zh-CN/tools/json-formatter",
-                "_sitemap": "zh-CN",
-                "alternatives": [
-                    {
-                        "hreflang": "en",
-                        "href": "/tools/json-formatter"
-                    },
-                    {
-                        "hreflang": "zh-CN",
-                        "href": "/zh-CN/tools/json-formatter"
-                    },
-                    {
-                        "hreflang": "x-default",
-                        "href": "/tools/json-formatter"
-                    }
-                ]
-            },
-            {
-                "loc": "/zh-CN/tools/base64",
-                "_sitemap": "zh-CN",
-                "alternatives": [
-                    {
-                        "hreflang": "en",
-                        "href": "/tools/base64"
-                    },
-                    {
-                        "hreflang": "zh-CN",
-                        "href": "/zh-CN/tools/base64"
-                    },
-                    {
-                        "hreflang": "x-default",
-                        "href": "/tools/base64"
-                    }
-                ]
-            },
-            {
-                "loc": "/zh-CN/tools/timestamp-converter",
-                "_sitemap": "zh-CN",
-                "alternatives": [
-                    {
-                        "hreflang": "en",
-                        "href": "/tools/timestamp-converter"
-                    },
-                    {
-                        "hreflang": "zh-CN",
-                        "href": "/zh-CN/tools/timestamp-converter"
-                    },
-                    {
-                        "hreflang": "x-default",
-                        "href": "/tools/timestamp-converter"
-                    }
-                ]
-            },
-            {
-                "loc": "/zh-CN/tools/sls-sql-generator",
-                "_sitemap": "zh-CN",
-                "alternatives": [
-                    {
-                        "hreflang": "en",
-                        "href": "/tools/sls-sql-generator"
-                    },
-                    {
-                        "hreflang": "zh-CN",
-                        "href": "/zh-CN/tools/sls-sql-generator"
-                    },
-                    {
-                        "hreflang": "x-default",
-                        "href": "/tools/sls-sql-generator"
-                    }
-                ]
-            },
-            {
-                "loc": "/zh-CN/tools/user-agent-parser",
-                "_sitemap": "zh-CN",
-                "alternatives": [
-                    {
-                        "hreflang": "en",
-                        "href": "/tools/user-agent-parser"
-                    },
-                    {
-                        "hreflang": "zh-CN",
-                        "href": "/zh-CN/tools/user-agent-parser"
-                    },
-                    {
-                        "hreflang": "x-default",
-                        "href": "/tools/user-agent-parser"
-                    }
-                ]
-            },
-            {
-                "loc": "/zh-CN/tools",
-                "_sitemap": "zh-CN",
-                "alternatives": [
-                    {
-                        "hreflang": "en",
-                        "href": "/tools"
-                    },
-                    {
-                        "hreflang": "zh-CN",
-                        "href": "/zh-CN/tools"
-                    },
-                    {
-                        "hreflang": "x-default",
-                        "href": "/tools"
-                    }
-                ]
-            },
-            null,
-            {
-                "loc": "/zh-CN/zh-CN-sitemap.xml",
-                "_sitemap": "zh-CN"
-            },
             null,
             null,
             null,
-            {
-                "loc": "/zh-CN/sitemap.xml",
-                "_sitemap": "zh-CN"
-            },
+            null,
             {
                 "loc": "/zh-CN/index-sitemap.xml",
                 "_sitemap": "zh-CN"
             },
             {
+                "loc": "/zh-CN/sitemap.xml",
+                "_sitemap": "zh-CN"
+            },
+            {
                 "loc": "/zh-CN/en-sitemap.xml",
+                "_sitemap": "zh-CN"
+            },
+            {
+                "loc": "/zh-CN/zh-CN-sitemap.xml",
                 "_sitemap": "zh-CN"
             }
         ],
