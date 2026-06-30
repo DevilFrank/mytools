@@ -1,5 +1,6 @@
 import { parseNaturalLanguage } from './parser.service'
-import { buildExplanation, buildFieldDescriptions, renderSql } from './renderer.service'
+import { AmbiguousEventError } from './parser.service'
+import { buildEventDescriptions, buildExplanation, buildFieldDescriptions, renderSql } from './renderer.service'
 import { validateParsedQuery } from './validator.service'
 import type { GenerateOptions, GenerateResult } from './types'
 
@@ -26,10 +27,21 @@ export async function generateSql(input: string, options: GenerateOptions = {}):
         explanation: buildExplanation(parsed),
         warnings: validation.warnings,
         fieldDescriptions: buildFieldDescriptions(parsed),
+        eventDescriptions: buildEventDescriptions(parsed),
         llmTrace: parseResult.llmTrace
       }
     }
   } catch (error) {
+    if (error instanceof AmbiguousEventError) {
+      return {
+        success: false,
+        code: error.code,
+        message: error.message,
+        candidates: error.candidates,
+        ambiguousText: error.ambiguousText,
+      }
+    }
+
     return {
       success: false,
       message: error instanceof Error ? error.message : 'SQL 生成失败。'

@@ -46,6 +46,10 @@ export function validateParsedQuery(parsed: ParsedQuery): ValidationResult {
     }
   }
 
+  if (parsed.intent === 'event_count_compare' && !parsed.eventComparison) {
+    return { valid: false, message: '请补充需要对比的两个事件，例如完成任务比开始任务少多少个。', warnings }
+  }
+
   if (parsed.intent === 'data_json_group_count' && !parsed.dataJsonField) {
     return { valid: false, message: '请补充 data 中需要分组的 JSON 字段。', warnings }
   }
@@ -74,5 +78,6 @@ function usesNumberFields(parsed: ParsedQuery): boolean {
   return parsed.filters.some((filter) => numberFields.has(filter.field))
     || Boolean(parsed.mustHave?.length)
     || Boolean(parsed.mustNotHave?.length)
+    || Boolean(parsed.eventComparison)
     || Boolean(parsed.groupBy?.some((field) => numberFields.has(field)))
 }

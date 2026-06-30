@@ -3,6 +3,7 @@ export type QueryIntent =
   | 'raw_filter'
   | 'missing_event'
   | 'missing_event_with_fields'
+  | 'event_count_compare'
   | 'data_json_group_count'
 
 export type FieldType = 'string' | 'number' | 'json'
@@ -27,6 +28,15 @@ export interface FieldFromEvent {
   aggregate?: 'arbitrary' | 'array_agg'
 }
 
+export interface EventCountComparison {
+  left: EventKey
+  right: EventKey
+  operator: 'less_than' | 'greater_than'
+  leftAlias?: string
+  rightAlias?: string
+  diffAlias?: string
+}
+
 export interface MetricDefinition {
   type: 'count'
   alias: string
@@ -46,6 +56,7 @@ export interface ParsedQuery {
   mustHave?: EventKey[]
   mustNotHave?: EventKey[]
   returnFields?: FieldFromEvent[]
+  eventComparison?: EventCountComparison
   dataJsonField?: string
   limit?: number | null
 }
@@ -89,14 +100,26 @@ export interface GenerateSuccess {
     explanation: string
     warnings: string[]
     fieldDescriptions: string[]
+    eventDescriptions: string[]
     llmTrace?: LlmTrace
   }
 }
 
+export interface GenerateFailureCandidate {
+  eventKey: string
+  name: string
+  type?: number
+  trackType?: number
+  category?: string
+}
+
 export interface GenerateFailure {
   success: false
+  code?: 'AMBIGUOUS_EVENT'
   message: string
   warnings?: string[]
+  candidates?: GenerateFailureCandidate[]
+  ambiguousText?: string
 }
 
 export type GenerateResult = GenerateSuccess | GenerateFailure

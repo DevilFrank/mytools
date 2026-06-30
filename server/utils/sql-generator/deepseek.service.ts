@@ -2,6 +2,7 @@ import { fieldDictionary, fieldTypeMap, knownFields } from './field-config'
 import { loadDotEnv } from './env'
 import type {
   EventKey,
+  EventCountComparison,
   FieldFromEvent,
   FilterCondition,
   GenerateOptions,
@@ -55,6 +56,7 @@ const allowedIntents = new Set<QueryIntent>([
   'raw_filter',
   'missing_event',
   'missing_event_with_fields',
+  'event_count_compare',
   'data_json_group_count',
 ])
 
@@ -183,6 +185,7 @@ function buildSystemPrompt(): string {
     '识别 6-1、7-1、11-5 这类事件为 { "type": 6, "trackType": 1 }。',
     '返回字段格式为 { "event": { "type": 6, "trackType": 1 }, "field": "actionValue", "alias": "actionValue", "aggregate": "arbitrary" }。',
     '如果用户要求全部、多个、列表，aggregate 使用 array_agg，否则使用 arbitrary。',
+    '如果用户问“事件A比事件B少/多多少个”，intent 使用 event_count_compare，eventComparison 为 { "left": { "type": 3, "trackType": 2 }, "right": { "type": 3, "trackType": 1 }, "operator": "less_than", "leftAlias": "event_3_2_count", "rightAlias": "event_3_1_count", "diffAlias": "diff_count" }。',
     'data 中 reason 字段分组时，intent 使用 data_json_group_count，dataJsonField 为 reason。',
     '输出 JSON 示例：{"intent":"group_count","filters":[{"field":"su","operator":"like","value":"https://example.com"}],"groupBy":["type","trackType"],"metrics":[{"type":"count","alias":"cnt"}],"orderBy":[{"field":"cnt","direction":"desc"}],"limit":null}',
     `字段字典：${JSON.stringify(fieldDictionary)}`,
@@ -257,6 +260,11 @@ function normalizeParsedQuery(raw: unknown, options: GenerateOptions): ParsedQue
   const returnFields = normalizeReturnFields(raw.returnFields)
   if (returnFields.length > 0) {
     parsed.returnFields = returnFields
+  }
+
+  const eventComparison = normalizeEventComparison(raw.eventComparison)
+  if (eventComparison) {
+    parsed.eventComparison = eventComparison
   }
 
   if (typeof raw.dataJsonField === 'string' && /^[A-Za-z_][A-Za-z0-9_]*$/.test(raw.dataJsonField)) {
@@ -368,6 +376,37 @@ function normalizeReturnFields(raw: unknown): FieldFromEvent[] {
       aggregate,
     }]
   })
+}
+
+function normalizeEventComparison(raw: unknown): EventCountComparison | undefined {
+  if (!isRecord(raw) || !isRecord(raw.left) || !isRecord(raw.right)) {
+    return undefined
+  }
+
+  const leftType = Number(raw.left.type)
+  const leftTrackType = Number(raw.left.trackType)
+  const rightType = Number(raw.right.type)
+  const rightTrackType = Number(raw.right.trackType)
+
+  if (!Number.isFinite(leftType) || !Number.isFinite(leftTrackType) || !Number.isFinite(rightType) || !Number.isFinite(rightTrackType)) {
+    return undefined
+  }
+
+  const left = { type: leftType, trackType: leftTrackType }
+  const right = { type: rightType, trackType: rightTrackType }
+
+  return {
+    left,
+    right,
+    operator: raw.operator === 'greater_than' ? 'greater_than' : 'less_than',
+    leftAlias: normalizeAlias(raw.leftAlias, `event_${left.type}_${left.trackType}_count`),
+    rightAlias: normalizeAlias(raw.rightAlias, `event_${right.type}_${right.trackType}_count`),
+    diffAlias: normalizeAlias(raw.diffAlias, 'diff_count'),
+  }
+}
+
+function normalizeAlias(raw: unknown, fallback: string): string {
+  return typeof raw === 'string' && /^[A-Za-z_][A-Za-z0-9_]*$/.test(raw) ? raw : fallback
 }
 
 function normalizeOrderBy(raw: unknown): OrderByDefinition[] {

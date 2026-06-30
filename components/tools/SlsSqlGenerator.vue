@@ -11,9 +11,31 @@ interface FieldDictionaryItem {
   example: string
 }
 
+interface EventDictionaryItem {
+  eventKey: string
+  type: number
+  trackType?: number
+  name: string
+  category: string
+  description: string
+  action?: string
+  actionValueMeaning?: string
+}
+
+interface EventCandidate {
+  eventKey: string
+  name: string
+  type?: number
+  trackType?: number
+  category?: string
+}
+
 interface GenerateResponse {
   success: boolean
+  code?: 'AMBIGUOUS_EVENT'
   message?: string
+  candidates?: EventCandidate[]
+  ambiguousText?: string
   data?: {
     sql: string
     intent: string
@@ -21,6 +43,7 @@ interface GenerateResponse {
     explanation: string
     warnings: string[]
     fieldDescriptions: string[]
+    eventDescriptions: string[]
     llmTrace?: {
       provider: 'deepseek'
       model: string
@@ -62,13 +85,21 @@ const copy = {
     explanation: '说明',
     noExplanation: '暂无说明',
     fieldNotes: '字段说明',
+    eventNotes: '事件说明',
     warnings: '注意事项',
     fieldDictionary: '字段字典',
+    eventDictionary: '事件字典',
+    ambiguousCandidates: '候选事件',
+    chooseEvent: '使用该事件',
+    event: '事件',
     field: '字段',
     type: '类型',
     required: '必填',
+    category: '分类',
     description: '说明',
     example: '示例',
+    action: 'action',
+    actionValue: 'actionValue',
     llmTrace: '模型对话过程',
     rawResponse: '模型原始返回',
     reasoning: 'Reasoning',
@@ -77,6 +108,7 @@ const copy = {
     emptyInput: '请输入查询需求。',
     requestFailed: '请求失败。',
     fieldsFailed: '字段字典加载失败。',
+    eventsFailed: '事件字典加载失败。',
   },
   en: {
     title: 'Natural language to Aliyun SLS SQL',
@@ -98,13 +130,21 @@ const copy = {
     explanation: 'Explanation',
     noExplanation: 'No explanation yet',
     fieldNotes: 'Field notes',
+    eventNotes: 'Event notes',
     warnings: 'Warnings',
     fieldDictionary: 'Field dictionary',
+    eventDictionary: 'Event dictionary',
+    ambiguousCandidates: 'Candidate events',
+    chooseEvent: 'Use event',
+    event: 'Event',
     field: 'Field',
     type: 'Type',
     required: 'Required',
+    category: 'Category',
     description: 'Description',
     example: 'Example',
+    action: 'action',
+    actionValue: 'actionValue',
     llmTrace: 'Model trace',
     rawResponse: 'Raw model response',
     reasoning: 'Reasoning',
@@ -113,6 +153,7 @@ const copy = {
     emptyInput: 'Enter a query request.',
     requestFailed: 'Request failed.',
     fieldsFailed: 'Failed to load field dictionary.',
+    eventsFailed: 'Failed to load event dictionary.',
   },
 }
 
@@ -127,8 +168,12 @@ const suMatchMode = ref<'like' | '='>('like')
 const loading = ref(false)
 const error = ref('')
 const fieldsError = ref('')
+const eventsError = ref('')
 const result = ref<GenerateResponse['data'] | null>(null)
 const fields = ref<FieldDictionaryItem[]>([])
+const events = ref<EventDictionaryItem[]>([])
+const ambiguousCandidates = ref<EventCandidate[]>([])
+const ambiguousText = ref('')
 const toolName = 'sls_sql_generator'
 
 const formattedParsed = computed(() => {
@@ -157,6 +202,13 @@ onMounted(async () => {
   } catch {
     fieldsError.value = labels.value.fieldsFailed
   }
+
+  try {
+    const payload = await $fetch<{ data?: EventDictionaryItem[] }>('/api/sql/events')
+    events.value = payload.data ?? []
+  } catch {
+    eventsError.value = labels.value.eventsFailed
+  }
 })
 
 async function handleGenerate() {
@@ -167,6 +219,8 @@ async function handleGenerate() {
 
   loading.value = true
   error.value = ''
+  ambiguousCandidates.value = []
+  ambiguousText.value = ''
 
   try {
     const response = await $fetch<GenerateResponse>('/api/sql/generate', {
@@ -183,6 +237,8 @@ async function handleGenerate() {
     if (!response.success || !response.data) {
       result.value = null
       error.value = response.message ?? labels.value.requestFailed
+      ambiguousCandidates.value = response.candidates ?? []
+      ambiguousText.value = response.ambiguousText ?? ''
       return
     }
 
@@ -201,6 +257,8 @@ function loadExample() {
   defaultLimit.value = 1000
   suMatchMode.value = 'like'
   error.value = ''
+  ambiguousCandidates.value = []
+  ambiguousText.value = ''
   trackToolEvent({ toolName, action: 'load_example' })
 }
 
@@ -210,7 +268,17 @@ function clearAll() {
   suMatchMode.value = 'like'
   error.value = ''
   result.value = null
+  ambiguousCandidates.value = []
+  ambiguousText.value = ''
   trackToolEvent({ toolName, action: 'clear_input' })
+}
+
+function chooseCandidate(candidate: EventCandidate) {
+  const originalInput = input.value
+  input.value = ambiguousText.value && originalInput.includes(ambiguousText.value)
+    ? originalInput.replace(ambiguousText.value, candidate.eventKey)
+    : `${originalInput} ${candidate.eventKey}`.trim()
+  handleGenerate()
 }
 
 async function copySql() {
@@ -266,6 +334,20 @@ function getErrorMessage(err: unknown): string {
       </div>
 
       <p v-if="error" class="status-error">{{ error }}</p>
+      <div v-if="ambiguousCandidates.length" class="rounded-md border border-amber-200 bg-amber-50 p-3">
+        <h4 class="text-sm font-semibold text-amber-950">{{ labels.ambiguousCandidates }}</h4>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <button
+            v-for="candidate in ambiguousCandidates"
+            :key="candidate.eventKey"
+            class="rounded-md border border-amber-300 bg-white px-3 py-2 text-sm text-amber-950 hover:bg-amber-100"
+            type="button"
+            @click="chooseCandidate(candidate)"
+          >
+            {{ labels.chooseEvent }}：{{ candidate.eventKey }} {{ candidate.name }}
+          </button>
+        </div>
+      </div>
 
       <div class="button-row">
         <button class="btn-primary disabled:cursor-not-allowed disabled:bg-blue-300" type="button" :disabled="loading" @click="handleGenerate">
@@ -310,6 +392,13 @@ function getErrorMessage(err: unknown): string {
             <li v-for="item in result.fieldDescriptions" :key="item">{{ item }}</li>
           </ul>
         </div>
+
+        <div v-if="result?.eventDescriptions?.length" class="mt-4">
+          <h4 class="text-sm font-semibold text-slate-900">{{ labels.eventNotes }}</h4>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-slate-700">
+            <li v-for="item in result.eventDescriptions" :key="item">{{ item }}</li>
+          </ul>
+        </div>
       </section>
     </div>
 
@@ -320,6 +409,35 @@ function getErrorMessage(err: unknown): string {
           {{ warning }}
         </li>
       </ul>
+    </section>
+
+    <section class="border-t border-slate-200 pt-5">
+      <h3 class="text-lg font-semibold tracking-normal text-slate-950">{{ labels.eventDictionary }}</h3>
+      <p v-if="eventsError" class="status-error">{{ eventsError }}</p>
+      <div class="mt-3 max-h-80 overflow-auto rounded-md border border-slate-200 bg-white">
+        <table class="min-w-full divide-y divide-slate-200 text-sm">
+          <thead class="sticky top-0 bg-slate-50 text-left text-slate-700">
+            <tr>
+              <th class="px-3 py-2 font-semibold">{{ labels.event }}</th>
+              <th class="px-3 py-2 font-semibold">{{ labels.category }}</th>
+              <th class="px-3 py-2 font-semibold">{{ labels.description }}</th>
+              <th class="px-3 py-2 font-semibold">{{ labels.action }}</th>
+              <th class="px-3 py-2 font-semibold">{{ labels.actionValue }}</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr v-for="eventItem in events" :key="eventItem.eventKey">
+              <td class="whitespace-nowrap px-3 py-2 font-mono text-slate-900">
+                {{ eventItem.eventKey }} {{ eventItem.name }}
+              </td>
+              <td class="whitespace-nowrap px-3 py-2 text-slate-700">{{ eventItem.category }}</td>
+              <td class="min-w-72 px-3 py-2 text-slate-700">{{ eventItem.description }}</td>
+              <td class="whitespace-nowrap px-3 py-2 font-mono text-slate-600">{{ eventItem.action || '-' }}</td>
+              <td class="min-w-56 px-3 py-2 text-slate-700">{{ eventItem.actionValueMeaning || '-' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section class="border-t border-slate-200 pt-5">
