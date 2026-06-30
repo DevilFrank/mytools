@@ -80,7 +80,7 @@ export const tools: ToolMeta[] = [
   {
     id: 'sls-sql-generator',
     title: 'Aliyun SLS SQL Generator',
-    description: 'Generate common Aliyun Log Service SQL templates for PV, time buckets, filters, and trackId analysis.',
+    description: 'Convert natural-language log questions into validated Aliyun Log Service SQL.',
     path: '/tools/sls-sql-generator',
     category: 'Log Analysis Tools',
     titleKey: 'tools.items.slsSqlGenerator.title',

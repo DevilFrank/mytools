@@ -367,33 +367,33 @@
         ]
       },
       "slsSqlGenerator": {
-        "seoTitle": "Aliyun SLS SQL Generator",
-        "seoDescription": "Generate Aliyun SLS SQL templates for PV counts, time buckets, field grouping, filters, trackId aggregation, and records with A but without B.",
-        "h1": "Aliyun SLS SQL Generator",
-        "intro": "Generate common Aliyun Log Service SQL templates for page-view counts, time bucket aggregation, field grouping, URL filters, event filters, trackId aggregation, and records that contain one event but not another.",
-        "toolHeading": "SLS SQL generator tool",
+        "seoTitle": "Natural Language to Aliyun SLS SQL",
+        "seoDescription": "Enter a natural-language log query, parse it into structured JSON, and generate SQL for the Aliyun Log Service console.",
+        "h1": "Natural Language to Aliyun SLS SQL",
+        "intro": "Enter a natural-language query request. The server parses it into structured query JSON, validates fields and types, escapes SQL values, and renders an Aliyun Log Service SQL template.",
+        "toolHeading": "Natural-language SLS SQL generator",
         "howToUse": [
-          "Choose a template, enter optional filters such as su, type, trackType, or step, then review the generated SQL. The generator supports PV by minute, custom time buckets, group by field, simple filtered log queries, trackId aggregation, and a template for records with event A but without event B.",
-          "The generated SQL is meant as a starting point. Aliyun SLS projects often use different field names and field types, so you should verify whether each field is stored as a string or number before running the query in production."
+          "Describe the query you want, such as filtering by su, grouping by type and trackType, or finding trackIds that contain event 6-1 but not 7-1, then generate SQL.",
+          "DeepSeek only parses natural language into ParsedQuery JSON. Field validation, SQL escaping, and template rendering stay in server-side deterministic code."
         ],
-        "example": "To count page views by 10-second buckets for a checkout URL, select the time bucket template, choose 10 seconds, and enter /checkout in the su filter. The generated SQL groups logs by a formatted time bucket and orders the result by time.",
-        "privacy": "Your input is processed locally in your browser and is not uploaded to our server.",
+        "example": "For example, enter “query logs where su is https://www.fpffz.top/?channel=news01, grouped by type and trackType” to generate SLS SQL grouped by cc and ordered by cnt descending.",
+        "privacy": "Your input is sent to the server-configured DeepSeek API for parsing. The API key is never exposed in the browser.",
         "faq": [
           {
-            "q": "What is Aliyun SLS SQL?",
-            "a": "Aliyun SLS SQL is the query language used in Alibaba Cloud Log Service to filter, aggregate, and analyze log data."
+            "q": "Does DeepSeek generate SQL directly?",
+            "a": "No. The model only returns ParsedQuery JSON, and final SQL is rendered by server-side templates."
           },
           {
-            "q": "How do I group logs by time bucket?",
-            "a": "Use the timestamp field __time__, subtract the remainder for the bucket size, format it, and group by the bucket alias."
+            "q": "Which query types are supported?",
+            "a": "The generator supports group counts, raw filtered logs, records with A but without B, records with A but without B plus selected fields, and grouping by fields inside data JSON."
           },
           {
-            "q": "How do I filter by URL or event type?",
-            "a": "Use su LIKE '%value%' for URL fragments and equality filters such as type = 6 or trackType = 1 for numeric event fields."
+            "q": "How is su matched by default?",
+            "a": "su uses LIKE contains matching by default, which is useful for URLs with paths or query parameters. The tool also exposes exact matching."
           },
           {
             "q": "Can I run the generated SQL without changes?",
-            "a": "Usually you should review it first. Field names, value types, and log table behavior may differ between SLS projects."
+            "a": "Use it as a starting point. Before production queries, verify field types, indexes, and SLS dialect functions for your project."
           }
         ]
       }
