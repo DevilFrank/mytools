@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "env -u DEBUG nuxt dev",
     "build": "env -u DEBUG nuxt build",
-    "generate": "env -u DEBUG nuxt generate",
+    "generate": "env -u DEBUG nuxt generate && node scripts/prepare-dist.mjs",
     "preview": "env -u DEBUG nuxt preview"
   },
   "dependencies": {

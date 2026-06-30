@@ -119,8 +119,11 @@ export default defineNuxtConfig({
 				'/zh-CN/contact',
 				'/zh-CN/privacy-policy',
 				'/zh-CN/terms',
+				'/api/sql/fields',
+				'/api/sql/events',
 			],
 		},
+		preset: 'cloudflare-pages',
 	},
 
 	compatibilityDate: '2025-01-01',
