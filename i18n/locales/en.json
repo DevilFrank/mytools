@@ -346,8 +346,8 @@
         "intro": "Calculate a practical single-scroll distance range as pixels, ratios, and percentages of viewport height. This is useful when you need to tune automated scrolling, exposure checks, or page-depth simulations so target elements can become visible within a planned number of scroll actions.",
         "toolHeading": "Scroll distance ratio calculator",
         "howToUse": [
-          "Enter the viewport height, total page height, target element height, required visible ratio, and the expected minimum and maximum number of scroll actions. Then enter target element top positions, one per line, with an optional exposure rate after a comma.",
-          "The tool computes each target threshold, finds the deepest threshold, and returns a minimum and maximum single-scroll distance. Percent values are based on viewport height so they can be reused in scroll automation or configuration values."
+          "Enter the viewport height, total page height, target element height, required visible ratio, and the expected minimum and maximum number of scroll actions. Then enter target element top positions, one per line, with an optional exposure rate after a comma to override that target's visible ratio.",
+          "The tool computes each target threshold, finds the deepest threshold, and returns the minimum and maximum single-scroll distance from that target exposure threshold. Percent values are based on viewport height so they can be reused in scroll automation or configuration values."
         ],
         "example": "With a 932px viewport, 3000px page, 280px target height, 50% visible ratio, 3 to 6 scroll actions, and target tops at 200, 1200, and 2700, the calculator returns the percentage range needed for one scroll step.",
         "privacy": "Your input is processed locally in your browser and is not uploaded to our server.",
@@ -358,7 +358,7 @@
           },
           {
             "q": "Why do I need a scroll count range?",
-            "a": "The minimum distance uses the deepest target threshold divided by the maximum scroll count. The maximum distance uses the maximum scrollable distance divided by the minimum scroll count."
+            "a": "The minimum distance uses the deepest target threshold divided by the maximum scroll count. The maximum distance uses the deepest target threshold divided by the minimum scroll count."
           },
           {
             "q": "What is the target threshold?",
@@ -477,7 +477,9 @@
       "invalidNumber": "Enter valid numeric values.",
       "positiveNumber": "Viewport height, page height, and target height must be greater than 0.",
       "visibleRatioError": "Visible ratio must be between 0 and 1.",
+      "targetExposureRateError": "Target exposureRate must be between 0 and 1.",
       "scrollCountError": "Scroll counts must be greater than 0, and minimum count cannot be greater than maximum count.",
+      "ratioRangeError": "The calculated result must be greater than 0% and less than 100%. Adjust the minimum or maximum scroll count and try again.",
       "emptyTargets": "Enter at least one target.",
       "invalidTarget": "Each target line must start with a numeric top value and may include a numeric exposure rate.",
       "calculateError": "Unable to calculate this range."

@@ -47,6 +47,18 @@ function clamp(value: number, min: number, max: number) {
   return Math.max(min, Math.min(max, value))
 }
 
+function formatPercent(ratio: number) {
+  const percent = ratio * 100
+
+  if (percent > 0 && percent < 0.01) {
+    return '<0.01%'
+  }
+
+  const flooredPercent = Math.floor(percent * 100) / 100
+
+  return `${flooredPercent.toFixed(2).replace(/\.?0+$/, '')}%`
+}
+
 function getScrollDistanceRatioRange({
   viewportHeight,
   pageHeight,
@@ -68,7 +80,8 @@ function getScrollDistanceRatioRange({
 
   const thresholds = targets
     .map((item) => {
-      const threshold = item.top + divHeight * visibleRatio - viewportHeight
+      const targetVisibleRatio = item.exposureRate ?? visibleRatio
+      const threshold = item.top + divHeight * targetVisibleRatio - viewportHeight
 
       return {
         ...item,
@@ -80,15 +93,21 @@ function getScrollDistanceRatioRange({
   const maxThreshold = Math.max(...thresholds.map((item) => item.threshold))
 
   const minDistance = maxThreshold / maxCount
-  const maxDistance = maxScrollTop / minCount
+  const maxDistance = maxThreshold / minCount
+  const minRatio = minDistance / viewportHeight
+  const maxRatio = maxDistance / viewportHeight
+
+  if (minRatio <= 0 || maxRatio >= 1) {
+    throw new Error(t('toolUi.scrollDistanceRatio.ratioRangeError'))
+  }
 
   return {
     minDistance,
     maxDistance,
-    minRatio: minDistance / viewportHeight,
-    maxRatio: maxDistance / viewportHeight,
-    minPercent: `${Math.round((minDistance / viewportHeight) * 100)}%`,
-    maxPercent: `${Math.round((maxDistance / viewportHeight) * 100)}%`,
+    minRatio,
+    maxRatio,
+    minPercent: formatPercent(minRatio),
+    maxPercent: formatPercent(maxRatio),
     thresholds,
   }
 }
@@ -135,6 +154,10 @@ function validateForm(targets: ScrollTarget[]) {
 
   if (form.visibleRatio < 0 || form.visibleRatio > 1) {
     throw new Error(t('toolUi.scrollDistanceRatio.visibleRatioError'))
+  }
+
+  if (targets.some((target) => target.exposureRate !== undefined && (target.exposureRate < 0 || target.exposureRate > 1))) {
+    throw new Error(t('toolUi.scrollDistanceRatio.targetExposureRateError'))
   }
 
   if (form.minScrollCount <= 0 || form.maxScrollCount <= 0 || form.minScrollCount > form.maxScrollCount) {
