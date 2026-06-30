@@ -8,6 +8,10 @@ const adsenseClient = process.env.NUXT_PUBLIC_ADSENSE_CLIENT || 'ca-pub-10909566
 export default defineNuxtConfig({
 	ssr: true,
 
+	experimental: {
+		appManifest: false,
+	},
+
 	modules: ['@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap', 'nuxt-gtag'],
 
 	tailwindcss: {
@@ -96,6 +100,7 @@ export default defineNuxtConfig({
 				'/tools/url-encoder',
 				'/tools/base64',
 				'/tools/user-agent-parser',
+				'/tools/scroll-distance-ratio',
 				'/tools/sls-sql-generator',
 				'/about',
 				'/contact',
@@ -108,6 +113,7 @@ export default defineNuxtConfig({
 				'/zh-CN/tools/url-encoder',
 				'/zh-CN/tools/base64',
 				'/zh-CN/tools/user-agent-parser',
+				'/zh-CN/tools/scroll-distance-ratio',
 				'/zh-CN/tools/sls-sql-generator',
 				'/zh-CN/about',
 				'/zh-CN/contact',

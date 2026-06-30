@@ -64,7 +64,18 @@ export const tools: ToolMeta[] = [
     titleKey: 'tools.items.userAgentParser.title',
     descriptionKey: 'tools.items.userAgentParser.description',
     categoryKey: 'categories.diagnostics',
-    related: ['url-encoder', 'timestamp-converter', 'json-formatter'],
+    related: ['scroll-distance-ratio', 'url-encoder', 'timestamp-converter'],
+  },
+  {
+    id: 'scroll-distance-ratio',
+    title: 'Scroll Distance Ratio Range Calculator',
+    description: 'Calculate a safe single-scroll distance percentage range for exposing target elements.',
+    path: '/tools/scroll-distance-ratio',
+    category: 'Web Diagnostics Tools',
+    titleKey: 'tools.items.scrollDistanceRatio.title',
+    descriptionKey: 'tools.items.scrollDistanceRatio.description',
+    categoryKey: 'categories.diagnostics',
+    related: ['user-agent-parser', 'timestamp-converter', 'sls-sql-generator'],
   },
   {
     id: 'sls-sql-generator',
@@ -75,7 +86,7 @@ export const tools: ToolMeta[] = [
     titleKey: 'tools.items.slsSqlGenerator.title',
     descriptionKey: 'tools.items.slsSqlGenerator.description',
     categoryKey: 'categories.logAnalysis',
-    related: ['json-formatter', 'timestamp-converter', 'url-encoder'],
+    related: ['scroll-distance-ratio', 'json-formatter', 'timestamp-converter'],
   },
 ]
 

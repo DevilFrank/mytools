@@ -65,6 +65,10 @@
         "title": "User-Agent Parser",
         "description": "Parse browser, operating system, device type, and rendering engine from a User-Agent string."
       },
+      "scrollDistanceRatio": {
+        "title": "Scroll Distance Ratio Range Calculator",
+        "description": "Calculate a safe single-scroll distance percentage range for exposing target elements."
+      },
       "slsSqlGenerator": {
         "title": "Aliyun SLS SQL Generator",
         "description": "Generate common Aliyun Log Service SQL templates for PV, time buckets, filters, and trackId analysis."
@@ -335,6 +339,33 @@
           }
         ]
       },
+      "scrollDistanceRatio": {
+        "seoTitle": "Scroll Distance Ratio Range Calculator",
+        "seoDescription": "Calculate the minimum and maximum single-scroll distance ratio needed to expose target elements within a planned scroll count range.",
+        "h1": "Scroll Distance Ratio Range Calculator",
+        "intro": "Calculate a practical single-scroll distance range as pixels, ratios, and percentages of viewport height. This is useful when you need to tune automated scrolling, exposure checks, or page-depth simulations so target elements can become visible within a planned number of scroll actions.",
+        "toolHeading": "Scroll distance ratio calculator",
+        "howToUse": [
+          "Enter the viewport height, total page height, target element height, required visible ratio, and the expected minimum and maximum number of scroll actions. Then enter target element top positions, one per line, with an optional exposure rate after a comma.",
+          "The tool computes each target threshold, finds the deepest threshold, and returns a minimum and maximum single-scroll distance. Percent values are based on viewport height so they can be reused in scroll automation or configuration values."
+        ],
+        "example": "With a 932px viewport, 3000px page, 280px target height, 50% visible ratio, 3 to 6 scroll actions, and target tops at 200, 1200, and 2700, the calculator returns the percentage range needed for one scroll step.",
+        "privacy": "Your input is processed locally in your browser and is not uploaded to our server.",
+        "faq": [
+          {
+            "q": "What does the percentage mean?",
+            "a": "The percentage is the recommended single-scroll distance divided by viewport height. For example, 50% means scrolling by half of the current viewport height."
+          },
+          {
+            "q": "Why do I need a scroll count range?",
+            "a": "The minimum distance uses the deepest target threshold divided by the maximum scroll count. The maximum distance uses the maximum scrollable distance divided by the minimum scroll count."
+          },
+          {
+            "q": "What is the target threshold?",
+            "a": "It is the scrollTop value at which the configured portion of a target element can be exposed in the viewport, clamped to the page's scrollable range."
+          }
+        ]
+      },
       "slsSqlGenerator": {
         "seoTitle": "Aliyun SLS SQL Generator",
         "seoDescription": "Generate Aliyun SLS SQL templates for PV counts, time buckets, field grouping, filters, trackId aggregation, and records with A but without B.",
@@ -424,6 +455,32 @@
       "parse": "Parse",
       "result": "Parsed result",
       "emptyError": "Paste a User-Agent string before parsing."
+    },
+    "scrollDistanceRatio": {
+      "viewportHeight": "Viewport height",
+      "pageHeight": "Page height",
+      "divHeight": "Target element height",
+      "visibleRatio": "Required visible ratio",
+      "minScrollCount": "Minimum scroll count",
+      "maxScrollCount": "Maximum scroll count",
+      "targets": "Targets",
+      "targetsPlaceholder": "200, 1.0\n1200, 0.8\n2700, 0.5",
+      "targetsHelp": "Enter one target per line. Format: top, optional exposureRate.",
+      "calculate": "Calculate range",
+      "minPercent": "Minimum ratio",
+      "maxPercent": "Maximum ratio",
+      "minDistance": "Minimum distance",
+      "maxDistance": "Maximum distance",
+      "top": "Top",
+      "exposureRate": "Exposure rate",
+      "threshold": "Threshold",
+      "invalidNumber": "Enter valid numeric values.",
+      "positiveNumber": "Viewport height, page height, and target height must be greater than 0.",
+      "visibleRatioError": "Visible ratio must be between 0 and 1.",
+      "scrollCountError": "Scroll counts must be greater than 0, and minimum count cannot be greater than maximum count.",
+      "emptyTargets": "Enter at least one target.",
+      "invalidTarget": "Each target line must start with a numeric top value and may include a numeric exposure rate.",
+      "calculateError": "Unable to calculate this range."
     },
     "sls": {
       "template": "Template",

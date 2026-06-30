@@ -65,6 +65,10 @@
         "title": "User-Agent 解析工具",
         "description": "从 User-Agent 字符串中解析浏览器、操作系统、设备类型和渲染引擎。"
       },
+      "scrollDistanceRatio": {
+        "title": "滑动距离百分比范围计算器",
+        "description": "根据目标元素位置计算单次滑动距离百分比的安全范围。"
+      },
       "slsSqlGenerator": {
         "title": "阿里云 SLS SQL 生成器",
         "description": "生成常见阿里云日志服务 SQL 模板，用于 PV、时间分桶、过滤和 trackId 分析。"
@@ -335,6 +339,33 @@
           }
         ]
       },
+      "scrollDistanceRatio": {
+        "seoTitle": "滑动距离百分比范围计算器",
+        "seoDescription": "根据视口高度、页面高度、目标元素位置和滑动次数范围，计算单次滑动距离百分比范围。",
+        "h1": "滑动距离百分比范围计算器",
+        "intro": "根据视口高度、页面高度、目标元素高度、可见比例、滑动次数范围和目标元素 top 值，计算单次滑动距离的像素、比例和百分比范围。它适合用于自动滑动、曝光检查和页面深度模拟参数调试。",
+        "toolHeading": "滑动距离百分比计算器",
+        "howToUse": [
+          "输入视口高度、页面总高度、目标元素高度、要求可见比例，以及预期最小和最大滑动次数。然后逐行输入目标元素 top 值，也可以在逗号后附带 exposureRate 作为备注。",
+          "工具会计算每个目标的曝光阈值，找出最深目标阈值，并返回单次滑动距离的最小值和最大值。百分比以视口高度为基准，便于用于自动化滑动或配置参数。"
+        ],
+        "example": "当视口高度为 932px、页面高度为 3000px、目标元素高度为 280px、可见比例为 50%、滑动次数为 3 到 6 次，目标 top 分别为 200、1200、2700 时，工具会返回单次滑动所需的百分比范围。",
+        "privacy": "你的输入会在浏览器本地处理，不会上传到我们的服务器。",
+        "faq": [
+          {
+            "q": "百分比表示什么？",
+            "a": "百分比表示推荐的单次滑动距离除以视口高度。例如 50% 表示每次滑动半个视口高度。"
+          },
+          {
+            "q": "为什么需要滑动次数范围？",
+            "a": "最小距离由最深目标阈值除以最大滑动次数得到；最大距离由最大可滚动距离除以最小滑动次数得到。"
+          },
+          {
+            "q": "目标阈值是什么？",
+            "a": "目标阈值是让目标元素达到指定可见比例时需要的 scrollTop，并会限制在页面可滚动范围内。"
+          }
+        ]
+      },
       "slsSqlGenerator": {
         "seoTitle": "阿里云 SLS SQL 生成器",
         "seoDescription": "生成阿里云 SLS SQL 模板，用于 PV 统计、时间分桶、字段分组、过滤、trackId 聚合，以及包含事件 A 但不包含事件 B 的记录分析。",
@@ -424,6 +455,32 @@
       "parse": "解析",
       "result": "解析结果",
       "emptyError": "请先粘贴 User-Agent 字符串再解析。"
+    },
+    "scrollDistanceRatio": {
+      "viewportHeight": "视口高度",
+      "pageHeight": "页面高度",
+      "divHeight": "目标元素高度",
+      "visibleRatio": "要求可见比例",
+      "minScrollCount": "最小滑动次数",
+      "maxScrollCount": "最大滑动次数",
+      "targets": "目标元素",
+      "targetsPlaceholder": "200, 1.0\n1200, 0.8\n2700, 0.5",
+      "targetsHelp": "每行输入一个目标。格式：top，可选 exposureRate。",
+      "calculate": "计算范围",
+      "minPercent": "最小比例",
+      "maxPercent": "最大比例",
+      "minDistance": "最小距离",
+      "maxDistance": "最大距离",
+      "top": "Top",
+      "exposureRate": "曝光率",
+      "threshold": "阈值",
+      "invalidNumber": "请输入有效的数字。",
+      "positiveNumber": "视口高度、页面高度和目标元素高度必须大于 0。",
+      "visibleRatioError": "可见比例必须在 0 到 1 之间。",
+      "scrollCountError": "滑动次数必须大于 0，且最小次数不能大于最大次数。",
+      "emptyTargets": "请至少输入一个目标元素。",
+      "invalidTarget": "每个目标行必须以数字 top 值开头，可选填写数字 exposureRate。",
+      "calculateError": "无法计算该范围。"
     },
     "sls": {
       "template": "模板",
